@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomDashboard"
+        android:icon="@drawable/dashboard_white"
+        android:title="Establishment"/>
+
+    <item
+        android:id="@+id/bottomManageAccount"
+        android:icon="@drawable/manage_account_white"
+        android:title="Management"/>
+
+    <item
+        android:id="@+id/bottomProfile"
+        android:icon="@drawable/account_white"
+        android:title="Profile"/>
+
+</menu>
