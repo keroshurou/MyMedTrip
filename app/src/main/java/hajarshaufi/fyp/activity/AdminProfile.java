@@ -1,4 +1,4 @@
-package hajarshaufi.fyp;
+package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,15 +7,19 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class AdminManageAccount extends AppCompatActivity {
+import hajarshaufi.fyp.R;
+import hajarshaufi.fyp.activity.AdminHomepage;
+import hajarshaufi.fyp.activity.AdminManageAccount;
+
+public class AdminProfile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_manage_account);
+        setContentView(R.layout.activity_admin_profile);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.bottomManageAccount);
+        bottomNavigationView.setSelectedItemId(R.id.bottomProfile);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
@@ -24,11 +28,11 @@ public class AdminManageAccount extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                 case R.id.bottomManageAccount:
-                    return true;
-                case R.id.bottomProfile:
-                    startActivity(new Intent(getApplicationContext(), AdminProfile.class));
+                    startActivity(new Intent(getApplicationContext(), AdminManageAccount.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
+                    return true;
+                case R.id.bottomProfile:
                     return true;
             }
             return false;

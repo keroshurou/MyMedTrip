@@ -1,14 +1,16 @@
-package hajarshaufi.fyp;
+package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class EstablishmentMain extends AppCompatActivity {
+import hajarshaufi.fyp.R;
+
+public class ViewSelectedEst extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_establishment_main);
+        setContentView(R.layout.activity_view_selected_est);
     }
 }

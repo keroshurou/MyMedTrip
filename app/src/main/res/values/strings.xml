@@ -4,4 +4,24 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <!--Example-->
+    <string name="address">This is an example of the address. Should be able to display max 3 lines. The address could be longer than this. </string>
+    <string name="daysEg">Monday-Sunday</string>
+    <string name="daysEg2">Sunday</string>
+    <string name="hoursEg">8am-10pm</string>
+    <string name="hoursEg2">8am-2pm</string>
+
+    <!--Spinner-->
+    <string-array name="type">
+        <item>Government</item>
+        <item>Private</item>
+    </string-array>
+
+    <string-array name="tagging">
+        <item>COVID-19</item>
+        <item>Blood Donation</item>
+        <item>General Practitioner</item>
+        <item>Specialist</item>
+    </string-array>
 </resources>

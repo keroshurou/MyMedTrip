@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/userExplore"
+        android:icon="@drawable/establishment_white"
+        android:title="Explore"/>
+
+    <item
+        android:id="@+id/userTrip"
+        android:icon="@drawable/trip_white"
+        android:title="Trip"/>
+
+    <item
+        android:id="@+id/userHelp"
+        android:icon="@drawable/help_white"
+        android:title="Help"/>
+
+    <item
+        android:id="@+id/userProfile"
+        android:icon="@drawable/account_white"
+        android:title="Account"/>
+
+</menu>

@@ -1,4 +1,4 @@
-package hajarshaufi.fyp;
+package hajarshaufi.fyp.java;
 
 public class Account {
 

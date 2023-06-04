@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".activity.LoginActivity">
 
     <EditText
         android:id="@+id/edtUsername"
@@ -20,6 +20,7 @@
         android:hint="Username"
         android:textColor="@color/black"
         android:textSize="14sp"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,7 @@
         android:ems="10"
         android:background="@drawable/edt_column"
         android:hint="Password"
+        android:inputType="textPassword"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:fontFamily="@font/inter"
@@ -73,6 +75,7 @@
         android:layout_marginBottom="704dp"
         android:fontFamily="@font/inter"
         android:text="Admin"
+        android:inputType="textPassword"
         android:textColor="@color/black"
         android:textSize="14sp" />
 
