@@ -4,6 +4,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="map_api_key">AIzaSyAVizSs1R7c5wNnDkIJE2ciqKalNnwCiy0</string>
 
     <!--Example-->
     <string name="address">This is an example of the address. Should be able to display max 3 lines. The address could be longer than this. </string>
@@ -24,4 +25,8 @@
         <item>General Practitioner</item>
         <item>Specialist</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

@@ -2,32 +2,38 @@ package hajarshaufi.fyp.java;
 
 public class Establishment {
 
+    private String id;
     private String type;
     private String establishmentName;
     private String address;
     private String days;
-    private String days2;
     private String hours;
+    private String days2;
     private String hours2;
+    private String city;
     private String tag1;
     private String tag2;
-    private String tag3;
-    private String daerah;
 
-    public Establishment(String type, String establishmentName, String address, String days,
-                         String days2, String hours, String hours2, String tag1, String tag2,
-                         String tag3, String daerah) {
+    public Establishment(String id, String type, String establishmentName, String address, String days, String hours, String days2, String hours2, String city, String tag1, String tag2) {
+        this.id = id;
         this.type = type;
         this.establishmentName = establishmentName;
         this.address = address;
         this.days = days;
-        this.days2 = days2;
         this.hours = hours;
+        this.days2 = days2;
         this.hours2 = hours2;
+        this.city = city;
         this.tag1 = tag1;
         this.tag2 = tag2;
-        this.tag3 = tag3;
-        this.daerah = daerah;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getType() {
@@ -62,14 +68,6 @@ public class Establishment {
         this.days = days;
     }
 
-    public String getDays2() {
-        return days2;
-    }
-
-    public void setDays2(String days2) {
-        this.days2 = days2;
-    }
-
     public String getHours() {
         return hours;
     }
@@ -78,12 +76,28 @@ public class Establishment {
         this.hours = hours;
     }
 
+    public String getDays2() {
+        return days2;
+    }
+
+    public void setDays2(String days2) {
+        this.days2 = days2;
+    }
+
     public String getHours2() {
         return hours2;
     }
 
     public void setHours2(String hours2) {
         this.hours2 = hours2;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getTag1() {
@@ -100,21 +114,5 @@ public class Establishment {
 
     public void setTag2(String tag2) {
         this.tag2 = tag2;
-    }
-
-    public String getTag3() {
-        return tag3;
-    }
-
-    public void setTag3(String tag3) {
-        this.tag3 = tag3;
-    }
-
-    public String getDaerah() {
-        return daerah;
-    }
-
-    public void setDaerah(String daerah) {
-        this.daerah = daerah;
     }
 }

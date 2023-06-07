@@ -27,7 +27,7 @@ import hajarshaufi.fyp.databinding.ActivityLoginBinding;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
-    String url = "http://192.168.56.86/mymedtrip/login.php";
+    String url = "http://192.168.10.86/mymedtrip/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                         //Login User
                                         else if (object.get("code").equals("200")) {
                                             Toast.makeText(LoginActivity.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), UserHomepage.class));
+                                            startActivity(new Intent(getApplicationContext(), MapsActivity.class));
                                         }
                                         //Login Admin
                                         else if (object.get("code").equals("201")) {

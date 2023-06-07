@@ -21,6 +21,6 @@
     <item>
         <bitmap
             android:gravity="end"
-            android:src="@drawable/spinner" />
+            android:src="@drawable/spinner30px" />
     </item>
 </layer-list>

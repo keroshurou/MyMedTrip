@@ -6,14 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".activity.LoginActivity">
 
+<!--    <ImageView-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:src="@drawable/arrow_back_btn"-->
+<!--        app:tint="@color/darkGreen"/>-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appName"
+        android:textStyle="bold"
+        android:text="@string/app_name"
+        android:textColor="@color/darkGreen"
+        android:fontFamily="@font/inter"
+        android:textSize="50sp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"/>
+
     <EditText
         android:id="@+id/edtUsername"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="70dp"
+        android:layout_below="@+id/appName"
         android:background="@drawable/edt_column"
         android:ems="10"
         android:fontFamily="@font/inter"
@@ -61,23 +81,23 @@
         android:textColor="@color/black"
         android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/txtAdmin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="364dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="704dp"
-        android:fontFamily="@font/inter"
-        android:text="Admin"
-        android:inputType="textPassword"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/txtAdmin"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="364dp"-->
+<!--        android:layout_marginTop="7dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:layout_marginBottom="704dp"-->
+<!--        android:fontFamily="@font/inter"-->
+<!--        android:text="Admin"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="14sp" />-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginButton"
