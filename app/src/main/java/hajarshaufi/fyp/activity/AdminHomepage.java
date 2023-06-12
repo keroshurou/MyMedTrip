@@ -39,7 +39,7 @@ public class AdminHomepage extends AppCompatActivity {
     ListView listView;
     EstAdapter estAdapter;
     Establishment establishment;
-    String url = "http://192.168.10.86/mymedtrip/fetchEst.php";
+    String url = "http://10.131.74.42/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

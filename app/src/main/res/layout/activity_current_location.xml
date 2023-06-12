@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CurrentLocation">
+
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/searchMap"
+        app:iconifiedByDefault="false"
+        android:queryHint="Search..."
+        android:elevation="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/big_search_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/hospitalTag"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hospitals"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:fontFamily="@font/inter"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingTop="4dp"-->
+<!--        android:paddingBottom="4dp"-->
+<!--        android:background="@drawable/bottom_background"-->
+<!--        android:layout_below="@+id/searchMap" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/clinicTag"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/searchMap"-->
+<!--        android:layout_toEndOf="@+id/hospitalTag"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:background="@drawable/bottom_background"-->
+<!--        android:fontFamily="@font/inter"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingTop="4dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingBottom="4dp"-->
+<!--        android:text="Clinic"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/confinementTag"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/searchMap"-->
+<!--        android:layout_toEndOf="@+id/clinicTag"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:background="@drawable/bottom_background"-->
+<!--        android:fontFamily="@font/inter"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingTop="4dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingBottom="4dp"-->
+<!--        android:text="Confinement"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp" />-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/searchMap"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:id="@+id/hospitalTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hospitals"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/inter"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/bottom_background"/>
+
+        <TextView
+            android:id="@+id/clinicTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bottom_background"
+            android:fontFamily="@font/inter"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="Clinic"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confinementTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bottom_background"
+            android:fontFamily="@font/inter"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="Confinement"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/maps"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        tools:layout="@layout/activity_est_view"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/linearLayout"/>
+
+</RelativeLayout>

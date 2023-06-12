@@ -31,8 +31,8 @@ import hajarshaufi.fyp.R;
 
 public class AddEstablishment extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    Spinner typeSpinner;
-    EditText establishmentNameEdt, addressEdt, daysEdt, hoursEdt, days2Edt, hours2Edt, cityEdt, tag1Edt, tag2Edt, tag3Edt;
+    Spinner typeSpinner, tag1Spinner, tag2Spinner;
+    EditText establishmentNameEdt, addressEdt, daysEdt, hoursEdt, days2Edt, hours2Edt, cityEdt;
     Button addBtn;
 
     private String type, establishmentName, address, days, hours, days2, hours2, city, tag1, tag2, tag3;
@@ -53,15 +53,27 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
         days2Edt = findViewById(R.id.days2);
         hours2Edt = findViewById(R.id.hours2);
         cityEdt = findViewById(R.id.city);
-        tag1Edt = findViewById(R.id.tag1);
-        tag2Edt = findViewById(R.id.tag2);
-        tag3Edt = findViewById(R.id.tag3);
+        tag1Spinner =findViewById(R.id.tag1);
+        tag2Spinner = findViewById(R.id.tag2);
         addBtn = findViewById(R.id.addBtn);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(AddEstablishment.this, R.array.type, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        typeSpinner.setAdapter(adapter);
+        //Spinner Type
+        ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(AddEstablishment.this, R.array.type, android.R.layout.simple_spinner_item);
+        adapterType.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        typeSpinner.setAdapter(adapterType);
         typeSpinner.setOnItemSelectedListener(AddEstablishment.this);
+
+        //Spinner Tag 1
+        ArrayAdapter<CharSequence> adapterTag1 = ArrayAdapter.createFromResource(AddEstablishment.this, R.array.tagging, android.R.layout.simple_spinner_item);
+        adapterTag1.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        tag1Spinner.setAdapter(adapterTag1);
+        tag1Spinner.setOnItemSelectedListener(AddEstablishment.this);
+
+        //Spinner Tag 2
+        ArrayAdapter<CharSequence> adapterTag2 = ArrayAdapter.createFromResource(AddEstablishment.this, R.array.tagging, android.R.layout.simple_spinner_item);
+        adapterTag2.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        tag2Spinner.setAdapter(adapterTag2);
+        tag2Spinner.setOnItemSelectedListener(AddEstablishment.this);
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,9 +94,8 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
         days2 = days2Edt.getText().toString();
         hours2 = hours2Edt.getText().toString();
         city = cityEdt.getText().toString();
-        tag1 = tag1Edt.getText().toString();
-        tag2 = tag2Edt.getText().toString();
-        tag3 = tag3Edt.getText().toString();
+        tag1 = tag1Spinner.getSelectedItem().toString().trim();
+        tag2 = tag2Spinner.getSelectedItem().toString().trim();
 
         if (TextUtils.isEmpty(establishmentName)){
             establishmentNameEdt.setError("Please enter establishment name");
@@ -135,9 +146,6 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
                 days2Edt.setText("");
                 hours2Edt.setText("");
                 cityEdt.setText("");
-                tag1Edt.setText("");
-                tag2Edt.setText("");
-                tag3Edt.setText("");
             }
         }, new com.android.volley.Response.ErrorListener() {
             @Override
@@ -171,7 +179,6 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
                 params.put("city", city);
                 params.put("tag1", tag1);
                 params.put("tag2", tag2);
-                params.put("tag3", tag3);
 
                 // at last we are returning our params.
                 return params;

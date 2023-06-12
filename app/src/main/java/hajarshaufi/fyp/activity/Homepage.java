@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -19,55 +22,52 @@ import hajarshaufi.fyp.java.Establishment;
 
 public class Homepage extends AppCompatActivity {
 
-    Button selectBtn;
-    EditText edtCity,edtType;
-    String city, type;
-
-    private RecyclerView recyclerView;
-    ArrayList<Establishment> establishmentArrayList;
+    ImageView hospitals, hotels, activities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        selectBtn = findViewById(R.id.btnSelect);
-        edtCity = findViewById(R.id.edtCity);
-        edtType = findViewById(R.id.edtType);
+        hospitals = findViewById(R.id.hospitals);
+        hotels = findViewById(R.id.hotels);
+        activities = findViewById(R.id.activities);
 
-        city = edtCity.getText().toString();
-        type = edtType.getText().toString();
-
-        recyclerView = findViewById(R.id.recyclerVw);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        establishmentArrayList = new ArrayList<Establishment>();
-        JSONFetch jsonFetch = new JSONFetch();
-        jsonFetch.execute();
-
-        selectBtn.setOnClickListener(new View.OnClickListener() {
+        hospitals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Homepage.this, EstView.class);
-                intent.putExtra("city", city);
-                intent.putExtra("type", type);
+                Intent intent = new Intent(Homepage.this, Search.class);
                 startActivity(intent);
             }
         });
 
+        //Bottom navigation view
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.bottomDashboard);
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.userExplore:
+                    return true;
+                case R.id.userTrip:
+                    startActivity(new Intent(getApplicationContext(), AdminManageAccount.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.userHelp:
+                    startActivity(new Intent(getApplicationContext(), AdminProfile.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.userProfile:
+                    startActivity(new Intent(getApplicationContext(), AddEstablishment.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+
     }
 
-    public class JSONFetch extends AsyncTask<String,String,String>{
-
-        @Override
-        protected String doInBackground(String... strings) {
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-        }
-    }
 }

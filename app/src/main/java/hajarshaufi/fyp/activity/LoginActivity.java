@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                         //Login User
                                         else if (object.get("code").equals("200")) {
                                             Toast.makeText(LoginActivity.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+                                            startActivity(new Intent(getApplicationContext(), Homepage.class));
                                         }
                                         //Login Admin
                                         else if (object.get("code").equals("201")) {

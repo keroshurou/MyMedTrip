@@ -6,62 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".activity.Homepage">
 
-    <EditText
-        android:id="@+id/edtCity"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="70dp"
-        android:background="@drawable/edt_column"
-        android:ems="10"
+        android:layout_height="wrap_content"
+        android:id="@+id/appName"
+        android:textStyle="bold"
+        android:text="@string/app_name"
+        android:textColor="@color/darkGreen"
         android:fontFamily="@font/inter"
-        android:hint="City"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"/>
 
-    <EditText
-        android:id="@+id/edtType"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="70dp"
-        android:layout_below="@id/edtCity"
-        android:background="@drawable/edt_column"
-        android:ems="10"
-        android:fontFamily="@font/inter"
-        android:hint="Type"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
+        android:id="@+id/rl">
 
+        <ImageView
+            android:id="@+id/hospitals"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/establishment_white"
+            android:backgroundTint="@color/darkGreen"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSelect"
+        <ImageView
+            android:id="@+id/hotels"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_toEndOf="@+id/hospitals"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/ic_baseline_hotel_24"
+            android:backgroundTint="@color/darkGreen"/>
+
+        <ImageView
+            android:id="@+id/flights"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_toEndOf="@+id/hotels"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/ic_baseline_flight_24"
+            android:backgroundTint="@color/darkGreen"/>
+
+        <ImageView
+            android:id="@+id/activities"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/hospitals"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bottom_background" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/edtType"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="120dp"
-        android:background="@drawable/green_button"
-        android:text="Select"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content"
+        android:id="@+id/rl2"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="420dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:text="Promotions"
+            android:textSize="26sp"
+            android:fontFamily="@font/inter"
+            android:textColor="@color/black"
+            android:layout_alignParentTop="true"/>
+
+    </RelativeLayout>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -81,15 +106,15 @@
         app:labelVisibilityMode="unlabeled"
         />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerVw"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/btnSelect"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="90dp"/>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerVw"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_below="@+id/btnSelect"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginBottom="90dp"/>-->
 
 
 </RelativeLayout>

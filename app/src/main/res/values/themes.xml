@@ -18,7 +18,7 @@
 
     <style name="SlideActivityAnimation" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/slide_out_left</item>
-        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_in_right</item>
     </style>
 
     <style name="Theme.MyMedTrip.NoActionBar">
