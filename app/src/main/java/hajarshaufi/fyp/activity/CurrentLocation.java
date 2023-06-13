@@ -110,9 +110,10 @@ public class CurrentLocation extends AppCompatActivity implements OnMapReadyCall
     public void onMapReady(@NonNull GoogleMap googleMap) {
 
         myMap = googleMap;
-        LatLng KKDurianTunggal = new LatLng(currentLocation.getLatitude(), currentLocation.getLatitude());
-        myMap.addMarker(new MarkerOptions().position(KKDurianTunggal).title("Current Location"));
-        myMap.moveCamera(CameraUpdateFactory.newLatLng(KKDurianTunggal));
+        LatLng myLocation = new LatLng(currentLocation.getLatitude(), currentLocation.getLatitude());
+        myMap.addMarker(new MarkerOptions().position(myLocation).title("Current Location"));
+        myMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
+        myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 15));
 
         myMap.getUiSettings().setZoomControlsEnabled(true);
         myMap.getUiSettings().setCompassEnabled(true);

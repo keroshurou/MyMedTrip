@@ -29,4 +29,8 @@
     <style name="Theme.MyMedTrip.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MyMedTrip.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="DialogTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorAccent">@color/darkGreen</item>
+    </style>
 </resources>

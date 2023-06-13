@@ -32,7 +32,8 @@
             android:id="@+id/hospitals"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="20dp"
+            android:layout_toStartOf="@+id/hotels"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/establishment_white"
             android:backgroundTint="@color/darkGreen"/>
 
@@ -40,29 +41,59 @@
             android:id="@+id/hotels"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_toEndOf="@+id/hospitals"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_baseline_hotel_24"
+            android:backgroundTint="@color/darkGreen" />
+
+        <ImageView
+            android:id="@+id/busses"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_toEndOf="@+id/hotels"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="0dp"
-            android:background="@drawable/ic_baseline_hotel_24"
+            android:background="@drawable/bus_white"
             android:backgroundTint="@color/darkGreen"/>
 
         <ImageView
             android:id="@+id/flights"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_toEndOf="@+id/hotels"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="0dp"
+            android:layout_toStartOf="@+id/attractions"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/hospitals"
             android:background="@drawable/ic_baseline_flight_24"
             android:backgroundTint="@color/darkGreen"/>
 
         <ImageView
-            android:id="@+id/activities"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@+id/hospitals"
+            android:id="@+id/attractions"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/hotels"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/bottom_background" />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_baseline_attractions_24"
+            android:backgroundTint="@color/darkGreen"/>
+
+        <ImageView
+            android:id="@+id/carsRentals"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/hotels"
+            android:layout_toEndOf="@+id/attractions"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_baseline_car_rental_24"
+            android:backgroundTint="@color/darkGreen"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/activities"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_below="@+id/hospitals"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:background="@drawable/bottom_background" />-->
 
     </RelativeLayout>
 
@@ -72,14 +103,14 @@
         android:id="@+id/rl2"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="420dp">
+        android:layout_marginTop="330dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
             android:text="Promotions"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:fontFamily="@font/inter"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"/>
@@ -96,7 +127,7 @@
         android:background="@drawable/bottom_background"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"
         android:elevation="2dp"
         app:menu="@menu/user_bottom_menu"

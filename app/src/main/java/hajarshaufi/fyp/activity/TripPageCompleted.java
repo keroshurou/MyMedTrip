@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import hajarshaufi.fyp.R;
 
-public class ViewSelectedEst extends AppCompatActivity {
+public class TripPageCompleted extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_selected_est);
+        setContentView(R.layout.activity_trip_page_completed);
     }
 }

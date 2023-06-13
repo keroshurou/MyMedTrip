@@ -1,14 +1,11 @@
 package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,7 +15,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,66 +27,37 @@ import java.util.Map;
 import hajarshaufi.fyp.R;
 import hajarshaufi.fyp.java.Establishment;
 
-public class AdminHomepage extends AppCompatActivity {
+public class SearchResults extends AppCompatActivity {
 
     public static ArrayList<Establishment> estArrayList = new ArrayList<>();
-    Button addNewButton;
-    EditText searchBarEdt;
+    ImageView backBtn;
     ListView listView;
     EstAdapter estAdapter;
     Establishment establishment;
+    String data;
     String url = "http://192.168.10.86/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_homepage);
-
-        getData();
+        setContentView(R.layout.activity_search_results);
 
         //Get All IDs
-        addNewButton = findViewById(R.id.addNewBtn);
-        searchBarEdt = findViewById(R.id.edtSearch);
+        backBtn = findViewById(R.id.backBtn);
 
         //list view
-        listView = findViewById(R.id.estListView);
+        listView = findViewById(R.id.searchResultsListView);
         estAdapter = new EstAdapter(this, estArrayList);
         listView.setAdapter(estAdapter);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.bottomDashboard);
+        data = getIntent().getStringExtra("searchData");
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.bottomDashboard:
-                    return true;
-                case R.id.bottomManageAccount:
-                    startActivity(new Intent(getApplicationContext(), AdminManageAccount.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottomProfile:
-                    startActivity(new Intent(getApplicationContext(), AdminProfile.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-            }
-            return false;
-        });
-
-        addNewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AdminHomepage.this, AddEstablishment.class);
-                startActivity(intent);
-            }
-        });
-
-        String data = searchBarEdt.getText().toString();
-
+        getData();
     }
 
     private void getData() {
+
+        RequestQueue queue = Volley.newRequestQueue(SearchResults.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -137,12 +104,35 @@ public class AdminHomepage extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(AdminHomepage.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchResults.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        }){
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+            @Override
+            protected Map<String, String> getParams() {
+
+                // below line we are creating a map for storing
+                // our values in key and value pair.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // on below line we are passing our
+                // key and value pair to our parameters.
+                params.put("data", data);
+                params.put("data2", data);
+
+                // at last we are returning our params.
+                return params;
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
     }
-
-
 }

@@ -6,16 +6,11 @@ import android.os.Bundle;
 
 import hajarshaufi.fyp.R;
 
-public class EstView extends AppCompatActivity {
-
-    String type, city;
+public class TripPageCancelled extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_est_view);
-
-        type = getIntent().getStringExtra("type");
-        city = getIntent().getStringExtra("city");
+        setContentView(R.layout.activity_trip_page_cancelled);
     }
 }

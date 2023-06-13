@@ -22,7 +22,7 @@ import hajarshaufi.fyp.java.Establishment;
 
 public class Homepage extends AppCompatActivity {
 
-    ImageView hospitals, hotels, activities;
+    ImageView hospitals, hotels, attractions, busses, flights, carRentals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,10 @@ public class Homepage extends AppCompatActivity {
 
         hospitals = findViewById(R.id.hospitals);
         hotels = findViewById(R.id.hotels);
-        activities = findViewById(R.id.activities);
+        attractions = findViewById(R.id.attractions);
+        busses = findViewById(R.id.busses);
+        flights = findViewById(R.id.flights);
+        carRentals = findViewById(R.id.carsRentals);
 
         hospitals.setOnClickListener(new View.OnClickListener() {
             @Override
