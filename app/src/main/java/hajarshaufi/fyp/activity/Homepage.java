@@ -53,7 +53,7 @@ public class Homepage extends AppCompatActivity {
                 case R.id.userExplore:
                     return true;
                 case R.id.userTrip:
-                    startActivity(new Intent(getApplicationContext(), AdminManageAccount.class));
+                    startActivity(new Intent(getApplicationContext(), TripPageUpcoming.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;

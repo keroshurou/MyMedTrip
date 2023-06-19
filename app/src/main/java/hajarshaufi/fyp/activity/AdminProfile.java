@@ -27,6 +27,7 @@ public class AdminProfile extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), AdminHomepage.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
+                    return true;
                 case R.id.bottomManageAccount:
                     startActivity(new Intent(getApplicationContext(), AdminManageAccount.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

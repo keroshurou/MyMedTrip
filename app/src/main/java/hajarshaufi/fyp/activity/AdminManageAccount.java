@@ -38,6 +38,7 @@ public class AdminManageAccount extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), AdminHomepage.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
+                    return true;
                 case R.id.bottomManageAccount:
                     return true;
                 case R.id.bottomProfile:

@@ -2,9 +2,8 @@ package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -21,13 +20,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import hajarshaufi.fyp.R;
 import hajarshaufi.fyp.java.Establishment;
 
-public class SearchResults extends AppCompatActivity {
+public class fetchEstAll extends AppCompatActivity {
 
     public static ArrayList<Establishment> estArrayList = new ArrayList<>();
     ImageView backBtn;
@@ -35,12 +32,12 @@ public class SearchResults extends AppCompatActivity {
     EstAdapter estAdapter;
     Establishment establishment;
     String data;
-    String url = "http://192.168.10.86/mymedtrip/fetchEst.php";
+    String url = "http://192.168.124.86/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_results);
+        setContentView(R.layout.activity_fetch_est_all);
 
         //Get All IDs
         backBtn = findViewById(R.id.backBtn);
@@ -50,14 +47,12 @@ public class SearchResults extends AppCompatActivity {
         estAdapter = new EstAdapter(this, estArrayList);
         listView.setAdapter(estAdapter);
 
-        data = getIntent().getStringExtra("searchData");
-
         getData();
     }
 
     private void getData() {
 
-        RequestQueue queue = Volley.newRequestQueue(SearchResults.this);
+        RequestQueue queue = Volley.newRequestQueue(fetchEstAll.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -104,7 +99,7 @@ public class SearchResults extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(SearchResults.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(fetchEstAll.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
@@ -112,21 +107,6 @@ public class SearchResults extends AppCompatActivity {
                 // as we are passing data in the form of url encoded
                 // so we are passing the content type below
                 return "application/x-www-form-urlencoded; charset=UTF-8";
-            }
-            @Override
-            protected Map<String, String> getParams() {
-
-                // below line we are creating a map for storing
-                // our values in key and value pair.
-                Map<String, String> params = new HashMap<String, String>();
-
-                // on below line we are passing our
-                // key and value pair to our parameters.
-                params.put("data", data);
-                params.put("data2", data);
-
-                // at last we are returning our params.
-                return params;
             }
         };
         // below line is to make

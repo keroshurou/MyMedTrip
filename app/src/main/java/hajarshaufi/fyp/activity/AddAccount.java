@@ -32,7 +32,7 @@ public class AddAccount extends AppCompatActivity {
     EditText usernameAccEdt, passwordAccEdt, passwordAccReEdt, staffNameEdt, staffNoEdt;
     Button addAcc;
     ImageView backBtn;
-    String url = "http://192.168.219.86/mymedtrip/addAcc.php";
+    String url = "http://192.168.124.86/mymedtrip/addAcc.php";
 
     private String username, password, retypePass, staffName, staffNo;
 

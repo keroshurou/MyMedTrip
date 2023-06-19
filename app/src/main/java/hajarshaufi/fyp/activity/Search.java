@@ -1,15 +1,20 @@
 package hajarshaufi.fyp.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,14 +35,20 @@ import hajarshaufi.fyp.R;
 import hajarshaufi.fyp.java.EstName;
 import hajarshaufi.fyp.java.Establishment;
 
-public class Search extends AppCompatActivity {
+public class Search extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     AutoCompleteTextView searchAuto;
     TextView searchOnMap, nearMe;
     EditText searchBar;
-    public static ArrayList<EstName> estNameArrayList = new ArrayList<>();
-    EstName estName;
-    String url = "http://192.168.10.86/mymedtrip/fetchEstName.php";
+    Spinner spinnerCity;
+
+    public static ArrayList<Establishment> estArrayList = new ArrayList<>();
+    Establishment establishment;
+    EstAdapter estAdapter;
+    private String searchData;
+    private String city;
+    String url = "http://192.168.227.86/mymedtrip/fetchEst.php";
+    String url1 = "http://192.168.227.86/mymedtrip/fetchEstAlorGajah.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +57,19 @@ public class Search extends AppCompatActivity {
 
         searchOnMap = findViewById(R.id.searchOnMap);
         nearMe = findViewById(R.id.nearMe);
-        searchBar = findViewById(R.id.search_bar);
-
-        getData();
+        spinnerCity = findViewById(R.id.spinnerCity);
 
 //        //ArrayList to array
 //        String[] estNames = (new String[estNameArrayList.size()]);
 //        estNames = estNameArrayList.toArray(estNames);
-//
-//        //autocomplete textview
-//        searchAuto = findViewById(R.id.searchAuto);
-//        String[] names = getResources().getStringArray(R.array.estName);
-//        String[] estNames2 = estNames;
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, estNames2);
-//        searchAuto.setAdapter(adapter);
+
+        //Spinner City
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.city, android.R.layout.simple_spinner_item);
+        arrayAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        spinnerCity.setAdapter(arrayAdapter);
+        spinnerCity.setOnItemSelectedListener(Search.this);
+
+        //city = spinnerCity.getSelectedItem().toString().trim();
 
         nearMe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,67 +79,43 @@ public class Search extends AppCompatActivity {
             }
         });
 
-        String searchData = searchBar.getText().toString();
+        //searchData = searchBar.getText().toString();
 
-        searchBar.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                // If the event is a key-down event on the "enter" button
-                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    // Perform action on key press
-                    Intent intent = new Intent(Search.this, SearchResults.class);
-                    intent.putExtra("searchData", searchData);
-                    startActivity(intent);
-                    Toast.makeText(Search.this, searchBar.getText(), Toast.LENGTH_SHORT).show();
-                    return true;
-                }
-                return false;
-            }
-        });
+//        searchBar.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//
+//                // If the event is a key-down event on the "enter" button
+//                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+//                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+//                    // Perform action on key press
+//                    Intent intent = new Intent(Search.this, fetchEstAll.class);
+//                    intent.putExtra("searchData", searchBar.getText().toString());
+//                    startActivity(intent);
+//                    //Toast.makeText(Search.this, searchBar.getText(), Toast.LENGTH_SHORT).show();
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
     }
 
-    private void getData() {
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        city = parent.getItemAtPosition(position).toString();
+        Toast.makeText(Search.this, city, Toast.LENGTH_SHORT).show();
 
-        StringRequest request = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
+        if (city.equals("Alor Gajah")){
+            startActivity(new Intent(Search.this, NearMe.class));
+        } else if (city.equals("All")){
+            startActivity(new Intent(Search.this, fetchEstAll.class));
+        } else if (city.equals("Krubong")) {
+            startActivity(new Intent(Search.this, fetchEstAll.class));
+        }
+    }
 
-                    @Override
-                    public void onResponse(String response) {
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
-                        estNameArrayList.clear();
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            String success = jsonObject.getString("success");
-                            JSONArray jsonArray = jsonObject.getJSONArray("item");
-
-                            if(success.equals("1")){
-
-                                for(int i=0; i<jsonArray.length(); i++){
-
-                                    JSONObject object = jsonArray.getJSONObject(i);
-
-                                    String name = object.getString("name");
-
-                                    estName = new EstName(name);
-                                    estNameArrayList.add(estName);
-                                }
-                            }
-
-                        }
-                        catch (JSONException e){
-                            e.printStackTrace();
-                        }
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Search.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(request);
     }
 }

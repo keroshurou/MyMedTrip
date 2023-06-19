@@ -18,6 +18,13 @@
         android:theme="@style/Theme.MyMedTrip"
         tools:targetApi="31">
         <activity
+            android:name=".activity.fetchEstKrubong"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.TripPageCancelled"
             android:exported="false">
             <meta-data
@@ -46,7 +53,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.SearchResults"
+            android:name=".activity.fetchEstAll"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

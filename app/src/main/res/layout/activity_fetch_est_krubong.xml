@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.NearMe">
+    tools:context=".activity.fetchEstKrubong">
 
     <ImageView
+        android:id="@+id/backBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -27,7 +28,7 @@
         android:gravity="center"/>
 
     <ListView
-        android:id="@+id/nearMeListView"
+        android:id="@+id/krubongLV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
@@ -39,6 +40,5 @@
         android:orientation="vertical">
 
     </ListView>
-
 
 </RelativeLayout>

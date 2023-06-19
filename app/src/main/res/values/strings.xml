@@ -19,6 +19,14 @@
         <item>Private</item>
     </string-array>
 
+    <string-array name="city">
+        <item>Select City</item>
+        <item>All</item>
+        <item>Alor Gajah</item>
+        <item>Melaka Tengah</item>
+        <item>Krubong</item>
+    </string-array>
+
     <string-array name="tagging">
         <item>COVID-19</item>
         <item>Blood Donation</item>

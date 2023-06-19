@@ -37,7 +37,7 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
 
     private String type, establishmentName, address, days, hours, days2, hours2, city, tag1, tag2, tag3;
 
-    String url = "http://192.168.219.86/mymedtrip/addEst.php";
+    String url = "http://192.168.124.86/mymedtrip/addEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +78,8 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Call method, getEst = get all data that need to pass to database
                 getEst();
             }
         });
@@ -97,6 +99,7 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
         tag1 = tag1Spinner.getSelectedItem().toString().trim();
         tag2 = tag2Spinner.getSelectedItem().toString().trim();
 
+        //Set error if any fields is empty
         if (TextUtils.isEmpty(establishmentName)){
             establishmentNameEdt.setError("Please enter establishment name");
         } else if(TextUtils.isEmpty(address)){
@@ -132,9 +135,19 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
             public void onResponse(String response) {
                 Log.e("TAG", "RESPONSE IS " + response);
                 try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    // on below line we are displaying a success toast message.
-                    Toast.makeText(AddEstablishment.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                    JSONObject object = new JSONObject(response);
+                    //Add est successful
+                    if (object.get("code").equals("201")) {
+                        Toast.makeText(AddEstablishment.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
+                    //Something went wrong
+                    if (object.get("code").equals("202")) {
+                        Toast.makeText(AddEstablishment.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
+                    //Trip already exist
+                    if (object.get("code").equals("200")) {
+                        Toast.makeText(AddEstablishment.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

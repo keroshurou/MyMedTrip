@@ -18,47 +18,40 @@
             android:layout_marginStart="10dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/ic_baseline_search_24"
+            android:background="@drawable/ic_baseline_location_city_24"
             android:backgroundTint="@color/darkGreen"/>
 
-<!--        <AutoCompleteTextView-->
-<!--            android:id="@+id/searchAuto"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:fontFamily="@font/inter"-->
-<!--            android:hint="Search"-->
-<!--            android:paddingLeft="10dp"-->
-<!--            android:layout_toEndOf="@+id/icon3"-->
-<!--            android:background="@drawable/search_bar"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="20sp"-->
-<!--            android:inputType="text"-->
-<!--            android:layout_marginStart="2dp"-->
-<!--            android:layout_marginEnd="4dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="1.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"/>-->
-
-        <EditText
-            android:id="@+id/search_bar"
+        <Spinner
+            android:id="@+id/spinnerCity"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:fontFamily="@font/inter"
-            android:hint="Search By Name, Location"
             android:gravity="center_vertical"
-            android:paddingLeft="10dp"
             android:layout_toEndOf="@+id/icon3"
-            android:background="@drawable/search_bar"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:inputType="text"
+            android:background="@drawable/spinnner_city"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="4dp"
+            android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:hint="City"-->
+<!--            android:style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">-->
+
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/autoCity"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:inputType="none"/>-->
+<!--            -->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
 
     </RelativeLayout>
 
@@ -75,7 +68,7 @@
             android:layout_marginStart="10dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/nearme_white"
+            android:background="@drawable/ic_baseline_my_location_24"
             android:backgroundTint="@color/darkGreen"/>
 
         <TextView

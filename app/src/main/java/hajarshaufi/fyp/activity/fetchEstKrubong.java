@@ -3,8 +3,7 @@ package hajarshaufi.fyp.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,28 +23,34 @@ import java.util.ArrayList;
 import hajarshaufi.fyp.R;
 import hajarshaufi.fyp.java.Establishment;
 
-public class NearMe extends AppCompatActivity {
+public class fetchEstKrubong extends AppCompatActivity {
 
     public static ArrayList<Establishment> estArrayList = new ArrayList<>();
+    ImageView backBtn;
     ListView listView;
     EstAdapter estAdapter;
     Establishment establishment;
-    String url = "http://192.168.124.86/mymedtrip/fetchEstNearMe.php";
+    String url = "http://192.168.124.86/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_near_me);
+        setContentView(R.layout.activity_fetch_est_krubong);
 
-        getData();
+        //Get All IDs
+        backBtn = findViewById(R.id.backBtn);
 
         //list view
-        listView = findViewById(R.id.nearMeListView);
+        listView = findViewById(R.id.krubongLV);
         estAdapter = new EstAdapter(this, estArrayList);
         listView.setAdapter(estAdapter);
+
+        getData();
     }
 
     private void getData() {
+
+        RequestQueue queue = Volley.newRequestQueue(fetchEstKrubong.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -92,9 +97,19 @@ public class NearMe extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(NearMe.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(fetchEstKrubong.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        }){
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
     }

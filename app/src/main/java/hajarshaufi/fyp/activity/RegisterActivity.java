@@ -28,7 +28,7 @@ import hajarshaufi.fyp.databinding.ActivityRegisterBinding;
 public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
-    String url ="http://192.168.56.86/mymedtrip/register.php";
+    String url ="http://192.168.124.86/mymedtrip/register.php";
 
     private String username, password, retypePass;
 

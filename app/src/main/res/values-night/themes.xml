@@ -19,7 +19,7 @@
         <item name="android:activityOpenExitAnimation">@anim/slide_in_right</item>
     </style>
 
-    <style name="DialogTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorAccent">@color/darkGreen</item>
+    <style name="DialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="colorAccent">@color/green</item>
     </style>
 </resources>
