@@ -130,13 +130,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.UserHomepage"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".activity.SuccessRegister"
             android:exported="false">
             <meta-data

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -31,8 +33,9 @@ public class TripPageUpcoming extends AppCompatActivity {
     Trip trip;
     TripUpAdapter tripUpAdapter;
     ListView listView;
+    TextView upcoming, completed, cancelled;
 
-    String url = "http://192.168.213.86/mymedtrip/fetchTripUpcoming.php";
+    String url = "http://192.168.212.86/mymedtrip/fetchTripUpcoming.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,30 @@ public class TripPageUpcoming extends AppCompatActivity {
         tripUpAdapter = new TripUpAdapter(this, tripUpcomingList);
         listView.setAdapter(tripUpAdapter);
 
-        getDataUpcoming();
+        //Get All ids
+        upcoming = findViewById(R.id.upcoming);
+        completed = findViewById(R.id.completed);
+        cancelled = findViewById(R.id.cancelled);
+
+        //completed button
+        completed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageCompleted.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
+        //completed button
+        cancelled.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageCancelled.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
 
         //Bottom navigation view
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -60,18 +86,20 @@ public class TripPageUpcoming extends AppCompatActivity {
                 case R.id.userTrip:
                     return true;
                 case R.id.userHelp:
-                    startActivity(new Intent(getApplicationContext(), AdminProfile.class));
+                    startActivity(new Intent(getApplicationContext(), HelpModule.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.userProfile:
-                    startActivity(new Intent(getApplicationContext(), AddEstablishment.class));
+                    startActivity(new Intent(getApplicationContext(), Profile.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
             }
             return false;
         });
+
+        getDataUpcoming();
     }
 
     private void getDataUpcoming() {
@@ -141,5 +169,10 @@ public class TripPageUpcoming extends AppCompatActivity {
         queue.add(request);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
     }
 }

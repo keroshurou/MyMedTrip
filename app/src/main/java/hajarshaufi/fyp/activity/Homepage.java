@@ -63,14 +63,17 @@ public class Homepage extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.userProfile:
-                    startActivity(new Intent(getApplicationContext(), AddEstablishment.class));
+                    startActivity(new Intent(getApplicationContext(), Profile.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
             }
             return false;
         });
-
     }
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
 }

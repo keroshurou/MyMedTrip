@@ -32,7 +32,7 @@ public class fetchEstAll extends AppCompatActivity {
     EstAdapter estAdapter;
     Establishment establishment;
     String data;
-    String url = "http://192.168.213.86/mymedtrip/fetchEst.php";
+    String url = "http://192.168.212.86/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,5 +114,12 @@ public class fetchEstAll extends AppCompatActivity {
         queue.add(request);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(fetchEstAll.this, Search.class));
     }
 }

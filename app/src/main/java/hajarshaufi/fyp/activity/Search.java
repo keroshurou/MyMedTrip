@@ -110,12 +110,19 @@ public class Search extends AppCompatActivity implements AdapterView.OnItemSelec
         } else if (city.equals("All")){
             startActivity(new Intent(Search.this, fetchEstAll.class));
         } else if (city.equals("Krubong")) {
-            startActivity(new Intent(Search.this, fetchEstAll.class));
+            startActivity(new Intent(Search.this, fetchEstKrubong.class));
         }
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(Search.this, Homepage.class));
     }
 }

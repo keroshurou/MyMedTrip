@@ -2,6 +2,7 @@ package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -30,7 +31,7 @@ public class fetchEstKrubong extends AppCompatActivity {
     ListView listView;
     EstAdapter estAdapter;
     Establishment establishment;
-    String url = "http://192.168.213.86/mymedtrip/fetchEst.php";
+    String url = "http://192.168.212.86/mymedtrip/fetchEstKrubong.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,5 +113,12 @@ public class fetchEstKrubong extends AppCompatActivity {
         queue.add(request);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(fetchEstKrubong.this, Search.class));
     }
 }

@@ -2,6 +2,7 @@ package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +31,7 @@ public class NearMe extends AppCompatActivity {
     ListView listView;
     EstAdapter estAdapter;
     Establishment establishment;
-    String url = "http://192.168.124.86/mymedtrip/fetchEstNearMe.php";
+    String url = "http://192.168.212.86/mymedtrip/fetchEstNearMe.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,5 +98,12 @@ public class NearMe extends AppCompatActivity {
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(NearMe.this, Search.class));
     }
 }
