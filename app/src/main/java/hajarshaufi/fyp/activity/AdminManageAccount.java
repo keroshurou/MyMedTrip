@@ -7,18 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 import hajarshaufi.fyp.R;
+import hajarshaufi.fyp.java.Admin;
 
 public class AdminManageAccount extends AppCompatActivity {
 
     Button addAccount;
     EditText searchEdt;
 
-    private String admin;
+    public static ArrayList<Admin> adminArrayList = new ArrayList<>();
+    ListView listView;
+    AdminAccountAdapter adminAccountAdapter;
+    Admin admin;
+    String url = "http://192.168.213.86/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +34,6 @@ public class AdminManageAccount extends AppCompatActivity {
 
         //Get all ids
         addAccount = findViewById(R.id.addAccount);
-        searchEdt = findViewById(R.id.edtSearch);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bottomManageAccount);

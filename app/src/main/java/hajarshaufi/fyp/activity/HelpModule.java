@@ -1,45 +1,44 @@
 package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.loader.content.AsyncTaskLoader;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
-
 import hajarshaufi.fyp.R;
-import hajarshaufi.fyp.java.Establishment;
+import hajarshaufi.fyp.databinding.ActivityHelpModuleBinding;
+import hajarshaufi.fyp.databinding.ActivityLoginBinding;
 
-public class Homepage extends AppCompatActivity {
+public class HelpModule extends AppCompatActivity {
 
-    ImageView hospitals, hotels, attractions, busses, flights, carRentals;
+    private ActivityHelpModuleBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
+        setContentView(R.layout.activity_help_module);
 
-        hospitals = findViewById(R.id.hospitals);
-        hotels = findViewById(R.id.hotels);
-        attractions = findViewById(R.id.attractions);
-        busses = findViewById(R.id.busses);
-        flights = findViewById(R.id.flights);
-        carRentals = findViewById(R.id.carsRentals);
+        binding = ActivityHelpModuleBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        hospitals.setOnClickListener(new View.OnClickListener() {
+        //Question 1
+        binding.layout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Homepage.this, Search.class);
+                Intent intent = new Intent(HelpModule.this, Question1.class);
+                startActivity(intent);
+            }
+        });
+
+        //Question 2
+        binding.layout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HelpModule.this, Question2.class);
                 startActivity(intent);
             }
         });
@@ -51,6 +50,9 @@ public class Homepage extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.userExplore:
+                    startActivity(new Intent(getApplicationContext(), Homepage.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
                     return true;
                 case R.id.userTrip:
                     startActivity(new Intent(getApplicationContext(), TripPageUpcoming.class));
@@ -58,9 +60,6 @@ public class Homepage extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.userHelp:
-                    startActivity(new Intent(getApplicationContext(), HelpModule.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
                     return true;
                 case R.id.userProfile:
                     startActivity(new Intent(getApplicationContext(), AddEstablishment.class));
@@ -70,7 +69,5 @@ public class Homepage extends AppCompatActivity {
             }
             return false;
         });
-
     }
-
 }

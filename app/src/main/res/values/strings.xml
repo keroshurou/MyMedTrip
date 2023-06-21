@@ -40,5 +40,11 @@
         <item>Klinik 1 Krubong</item>
     </string-array>
 
+    <!--Article 1/Question1-->
+    <string name="a1p1">MyMedTrip is an application that centered on medical tourism. This application is more focused on Melaka district. </string>
+    <string name="a1p2">User can access all hospitals and clinics that available in Melaka.</string>
 
+    <!--Article 2/Question2-->
+    <string name="a2p1">After registration, user cannot change their username. However, user could change their password at profile tab</string>
+    <string name="a2p2">Steps to change password:</string>
 </resources>

@@ -17,25 +17,26 @@
         android:background="@drawable/add_account_white"
         android:backgroundTint="@color/green" />
 
-    <EditText
-        android:id="@+id/edtSearch"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="70dp"
-        android:background="@drawable/edt_column"
-        android:ems="10"
-        android:fontFamily="@font/inter"
-        android:hint="Search Admin Account"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <EditText-->
+<!--        android:id="@+id/edtSearch"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="70dp"-->
+<!--        android:layout_marginTop="69dp"-->
+<!--        android:layout_marginEnd="70dp"-->
+<!--        android:background="@drawable/edt_column"-->
+<!--        android:ems="10"-->
+<!--        android:fontFamily="@font/inter"-->
+<!--        android:hint="Search Admin Account"-->
+<!--        android:inputType="text"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <ListView
         android:id="@+id/estListView"
@@ -43,7 +44,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="90dp"
         android:layout_marginBottom="85dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"

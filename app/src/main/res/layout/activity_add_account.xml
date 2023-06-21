@@ -121,7 +121,7 @@
         android:background="@drawable/edt_column"
         android:ems="10"
         android:fontFamily="@font/inter"
-        android:hint="Staff Name"
+        android:hint="Staff No"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:inputType="text"

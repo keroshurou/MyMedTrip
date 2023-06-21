@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Question1">
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Help"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="8dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="6dp"
+        android:background="@drawable/search_bar"
+        android:layout_alignParentTop="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@+id/txtVw">
+
+        <TextView
+            android:id="@+id/q1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What is MyMedTrip?"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/txtVw2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a1p1"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter"
+            android:layout_below="@+id/q1"
+            android:layout_marginTop="20dp"
+            android:justificationMode="inter_word" />
+
+        <TextView
+            android:id="@+id/txtVw3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a1p2"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter"
+            android:layout_below="@+id/txtVw2"
+            android:layout_marginTop="12dp"
+            android:justificationMode="inter_word"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

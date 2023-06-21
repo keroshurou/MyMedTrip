@@ -32,7 +32,7 @@ public class fetchEstAll extends AppCompatActivity {
     EstAdapter estAdapter;
     Establishment establishment;
     String data;
-    String url = "http://192.168.124.86/mymedtrip/fetchEst.php";
+    String url = "http://192.168.213.86/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

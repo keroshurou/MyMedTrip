@@ -46,7 +46,7 @@ public class SaveEst extends AppCompatActivity {
     TextView estType,estName,estAddress,estDays,estHours,estDays2,estHours2,estCity,estTag1,estTag2,estTag3;
     private String type,name,address,days,hours,days2,hours2,city,tag1,tag2,tag3;
     private String tripdate,triptime,status,tripType,tripName, tripAddress, tripDays, tripHours, tripDays2, tripHours2, tripCity, tripTag1, tripTag2;
-    String url = "http://192.168.124.86/mymedtrip/addTrip.php";
+    String url = "http://192.168.213.86/mymedtrip/addTrip.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

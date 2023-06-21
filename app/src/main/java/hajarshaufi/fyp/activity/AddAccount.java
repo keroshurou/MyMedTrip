@@ -32,7 +32,7 @@ public class AddAccount extends AppCompatActivity {
     EditText usernameAccEdt, passwordAccEdt, passwordAccReEdt, staffNameEdt, staffNoEdt;
     Button addAcc;
     ImageView backBtn;
-    String url = "http://192.168.124.86/mymedtrip/addAcc.php";
+    String url = "http://192.168.213.86/mymedtrip/addAcc.php";
 
     private String username, password, retypePass, staffName, staffNo;
 
@@ -101,9 +101,23 @@ public class AddAccount extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.e("TAG", "RESPONSE IS " + response);
                 try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    // on below line we are displaying a success toast message.
-                    Toast.makeText(AddAccount.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                    JSONObject object = new JSONObject(response);
+                    //Add account successful
+                    if (object.get("code").equals("201")) {
+                        Toast.makeText(AddAccount.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
+                    //Something went wrong
+                    if (object.get("code").equals("202")) {
+                        Toast.makeText(AddAccount.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
+                    //Staff already admin
+                    if (object.get("code").equals("200")) {
+                        Toast.makeText(AddAccount.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
+                    //username already exist
+                    if (object.get("code").equals("400")) {
+                        Toast.makeText(AddAccount.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

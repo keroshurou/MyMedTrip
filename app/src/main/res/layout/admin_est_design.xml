@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/green">
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:id="@+id/imageView"-->
-<!--            android:background="@color/green"-->
-<!--            android:layout_marginTop="6dp"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_alignParentStart="true"-->
-<!--            app:cardCornerRadius="60dp">-->
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:layout_width="50dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:id="@+id/imageView"-->
+        <!--            android:background="@color/green"-->
+        <!--            android:layout_marginTop="6dp"-->
+        <!--            android:layout_marginStart="16dp"-->
+        <!--            android:layout_alignParentTop="true"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            app:cardCornerRadius="60dp">-->
 
-<!--            <ImageView-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:id="@+id/icon"-->
-<!--                android:background="@drawable/shape_circle"/>-->
+        <!--            <ImageView-->
+        <!--                android:layout_width="50dp"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:id="@+id/icon"-->
+        <!--                android:background="@drawable/shape_circle"/>-->
 
-<!--        </androidx.cardview.widget.CardView>-->
+        <!--        </androidx.cardview.widget.CardView>-->
 
         <TextView
             android:id="@+id/type"
@@ -231,37 +230,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/bar"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addBtnRv"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_baseline_bookmark_24"
-            android:backgroundTint="@color/darkGreen"
-            android:layout_below="@id/bar"
-            android:layout_toStartOf="@+id/btnDirection"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnDirection"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_baseline_directions_24"
-            android:backgroundTint="@color/darkGreen"
-            android:layout_below="@id/bar"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_alignParentEnd="true"/>
+            android:background="@drawable/bar"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:background="@color/white"
-            android:layout_below="@+id/addBtnRv"/>
+            android:layout_below="@+id/bar"/>
 
     </RelativeLayout>
 

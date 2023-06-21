@@ -37,9 +37,9 @@ public class AdminHomepage extends AppCompatActivity {
     Button addNewButton;
     EditText searchBarEdt;
     ListView listView;
-    EstAdapter estAdapter;
+    AdminEstAdapter adminEstAdapter;
     Establishment establishment;
-    String url = "http://192.168.124.86/mymedtrip/fetchEst.php";
+    String url = "http://192.168.213.86/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +50,11 @@ public class AdminHomepage extends AppCompatActivity {
 
         //Get All IDs
         addNewButton = findViewById(R.id.addNewBtn);
-        searchBarEdt = findViewById(R.id.edtSearch);
 
         //list view
         listView = findViewById(R.id.estListView);
-        estAdapter = new EstAdapter(this, estArrayList);
-        listView.setAdapter(estAdapter);
+        adminEstAdapter = new AdminEstAdapter(this, estArrayList);
+        listView.setAdapter(adminEstAdapter);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bottomDashboard);
@@ -124,7 +123,7 @@ public class AdminHomepage extends AppCompatActivity {
 
                                     establishment = new Establishment(id,type,name,address,days,hours,days2,hours2,city,tag1,tag2);
                                     estArrayList.add(establishment);
-                                    estAdapter.notifyDataSetChanged();
+                                    adminEstAdapter.notifyDataSetChanged();
                                 }
                             }
 
