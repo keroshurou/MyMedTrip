@@ -41,7 +41,7 @@ public class AdminManageAccount extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.bottomDashboard:
-                    startActivity(new Intent(getApplicationContext(), AdminHomepage.class));
+                    startActivity(new Intent(getApplicationContext(), AdminEstablishment.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;

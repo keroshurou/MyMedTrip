@@ -31,7 +31,7 @@ public class fetchEstKrubong extends AppCompatActivity {
     ListView listView;
     EstAdapter estAdapter;
     Establishment establishment;
-    String url = "http://192.168.212.86/mymedtrip/fetchEstKrubong.php";
+    String url = "http://192.168.234.86/mymedtrip/fetchEstKrubong.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class fetchEstKrubong extends AppCompatActivity {
         setContentView(R.layout.activity_fetch_est_krubong);
 
         //Get All IDs
-        backBtn = findViewById(R.id.backBtn);
 
         //list view
         listView = findViewById(R.id.krubongLV);

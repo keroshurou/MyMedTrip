@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BusRoutes">
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bus Routes"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="8dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="6dp"
+        android:background="@drawable/search_bar"
+        android:layout_alignParentTop="true"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVw"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Batang Melaka"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout2"
+            android:layout_below="@+id/layout"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Batu Berendam (Taman Merdeka)"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout3"-->
+<!--            android:layout_below="@+id/layout2"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Bertam Ulu"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark3"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout4"-->
+<!--            android:layout_below="@+id/layout3"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route4"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Bukit Katil"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark4"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout5"-->
+<!--            android:layout_below="@+id/layout4"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route5"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Bukit Rambai"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark5"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout6"-->
+<!--            android:layout_below="@+id/layout5"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route6"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Jasin"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark6"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout7"
+            android:layout_below="@+id/layout2"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Krubong"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout8"-->
+<!--            android:layout_below="@+id/layout7"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route8"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Masjid Tanah"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark8"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout9"
+            android:layout_below="@+id/layout7"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="MITC 1"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout10"-->
+<!--            android:layout_below="@+id/layout9"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route10"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="MITC 2"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark10"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout11"-->
+<!--            android:layout_below="@+id/layout10"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route11"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Muar (Panorama Sentral Sungai Rambai)"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark11"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout12"-->
+<!--            android:layout_below="@+id/layout11"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route12"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Pantai Kundur"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark12"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout13"-->
+<!--            android:layout_below="@+id/layout12"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route13"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Pulau Gadong"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark13"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout14"-->
+<!--            android:layout_below="@+id/layout13"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route14"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Tampin"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark14"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout15"-->
+<!--            android:layout_below="@+id/layout14"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route15"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Tangkak"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark15"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout16"-->
+<!--            android:layout_below="@+id/layout15"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route16"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Ujong Pasir"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark16"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookBus"
+            android:layout_below="@+id/layout9"
+            android:paddingStart="4dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/busText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Book Bus"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/busMark"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/saveTrip"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_below="@+id/relativeLayout"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginStart="120dp"-->
+<!--        android:layout_marginEnd="120dp"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:background="@drawable/green_button"-->
+<!--        android:text="Book Bus" />-->
+
+</RelativeLayout>

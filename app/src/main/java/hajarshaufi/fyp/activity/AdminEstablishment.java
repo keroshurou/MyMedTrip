@@ -1,11 +1,9 @@
 package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,13 +23,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import hajarshaufi.fyp.R;
 import hajarshaufi.fyp.java.Establishment;
 
-public class AdminHomepage extends AppCompatActivity {
+public class AdminEstablishment extends AppCompatActivity {
 
     public static ArrayList<Establishment> estArrayList = new ArrayList<>();
     Button addNewButton;
@@ -39,12 +35,12 @@ public class AdminHomepage extends AppCompatActivity {
     ListView listView;
     AdminEstAdapter adminEstAdapter;
     Establishment establishment;
-    String url = "http://192.168.213.86/mymedtrip/fetchEst.php";
+    String url = "http://10.131.77.15/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_homepage);
+        setContentView(R.layout.activity_admin_establishment);
 
         getData();
 
@@ -80,12 +76,12 @@ public class AdminHomepage extends AppCompatActivity {
         addNewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminHomepage.this, AddEstablishment.class);
+                Intent intent = new Intent(AdminEstablishment.this, AddEstablishment.class);
                 startActivity(intent);
             }
         });
 
-        String data = searchBarEdt.getText().toString();
+//        String data = searchBarEdt.getText().toString();
 
     }
 
@@ -136,7 +132,7 @@ public class AdminHomepage extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(AdminHomepage.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminEstablishment.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);

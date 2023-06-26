@@ -1,28 +1,20 @@
 package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.loader.content.AsyncTaskLoader;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
-
 import hajarshaufi.fyp.R;
-import hajarshaufi.fyp.java.Establishment;
 
 public class Homepage extends AppCompatActivity {
 
-    ImageView hospitals, hotels, attractions, busses, flights, carRentals;
+    ImageView hospitals, attractions, transportation;
+    private String placeholder, username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +22,32 @@ public class Homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
 
         hospitals = findViewById(R.id.hospitals);
-        hotels = findViewById(R.id.hotels);
         attractions = findViewById(R.id.attractions);
-        busses = findViewById(R.id.busses);
-        flights = findViewById(R.id.flights);
-        carRentals = findViewById(R.id.carsRentals);
+        transportation = findViewById(R.id.transport);
 
         hospitals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Homepage.this, Search.class);
                 startActivity(intent);
+            }
+        });
+
+        transportation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //if ada flight, guna TypeTransport
+                Intent intent = new Intent(Homepage.this, BusRoutes.class);
+                startActivity(intent);
+            }
+        });
+
+
+        attractions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(Homepage.this, SearchAttractions.class);
+                //startActivity(intent);
             }
         });
 

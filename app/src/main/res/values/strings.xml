@@ -34,10 +34,59 @@
         <item>Specialist</item>
     </string-array>
 
-    <string-array name="estName">
-        <item>Klinik Kesihatan Durian Tunggal</item>
-        <item>Poliklinik Hidayah</item>
-        <item>Klinik 1 Krubong</item>
+    <string-array name="transportType">
+        <item>Select Transport</item>
+        <item>Bus</item>
+        <item>Flight</item>
+    </string-array>
+
+    <string-array name="busRoutes">
+        <item>Select Routes</item>
+        <item>Batang Melaka</item>
+        <item>Batu Berendam (Taman Merdeka)</item>
+        <item>Krubong</item>
+        <item>MITC 1</item>
+    </string-array>
+
+    <string-array name="batangMelaka">
+        <item>Select Time</item>
+        <item>7.15 am</item>
+        <item>9.15 am</item>
+        <item>11.15 am</item>
+        <item>1.15 pm</item>
+        <item>3.15 pm</item>
+        <item>5.15 pm</item>
+        <item>7.15 pm</item>
+    </string-array>
+
+    <string-array name="batuBerendam">
+        <item>Select Time</item>
+        <item>7.00 am</item>
+        <item>9.30 am</item>
+        <item>12.00 pm</item>
+        <item>2.30 pm</item>
+        <item>5.00 pm</item>
+        <item>7.30 pm</item>
+    </string-array>
+
+    <string-array name="krubong">
+        <item>Select Time</item>
+        <item>8.00 am</item>
+        <item>11.00 am</item>
+        <item>2.00 pm</item>
+        <item>5.00 pm</item>
+    </string-array>
+
+    <string-array name="mitc1">
+        <item>Select Time</item>
+        <item>7.20 am</item>
+        <item>9.15 am</item>
+        <item>10.45 am</item>
+        <item>12.15 pm</item>
+        <item>1.45 pm</item>
+        <item>3.15 pm</item>
+        <item>5.00 pm</item>
+        <item>7.00 pm</item>
     </string-array>
 
     <!--Article 1/Question1-->

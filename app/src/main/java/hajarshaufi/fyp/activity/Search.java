@@ -37,25 +37,17 @@ import hajarshaufi.fyp.java.Establishment;
 
 public class Search extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    AutoCompleteTextView searchAuto;
-    TextView searchOnMap, nearMe;
-    EditText searchBar;
+    TextView nearMe;
     Spinner spinnerCity;
 
-    public static ArrayList<Establishment> estArrayList = new ArrayList<>();
-    Establishment establishment;
-    EstAdapter estAdapter;
-    private String searchData;
     private String city;
-    String url = "http://192.168.227.86/mymedtrip/fetchEst.php";
-    String url1 = "http://192.168.227.86/mymedtrip/fetchEstAlorGajah.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        searchOnMap = findViewById(R.id.searchOnMap);
+        //searchOnMap = findViewById(R.id.searchOnMap);
         nearMe = findViewById(R.id.nearMe);
         spinnerCity = findViewById(R.id.spinnerCity);
 
@@ -78,26 +70,6 @@ public class Search extends AppCompatActivity implements AdapterView.OnItemSelec
                 startActivity(intent);
             }
         });
-
-        //searchData = searchBar.getText().toString();
-
-//        searchBar.setOnKeyListener(new View.OnKeyListener() {
-//            @Override
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//
-//                // If the event is a key-down event on the "enter" button
-//                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-//                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-//                    // Perform action on key press
-//                    Intent intent = new Intent(Search.this, fetchEstAll.class);
-//                    intent.putExtra("searchData", searchBar.getText().toString());
-//                    startActivity(intent);
-//                    //Toast.makeText(Search.this, searchBar.getText(), Toast.LENGTH_SHORT).show();
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
     }
 
     @Override

@@ -32,7 +32,7 @@ public class fetchEstAll extends AppCompatActivity {
     EstAdapter estAdapter;
     Establishment establishment;
     String data;
-    String url = "http://192.168.212.86/mymedtrip/fetchEst.php";
+    String url = "http://192.168.234.86/mymedtrip/fetchEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,6 @@ public class fetchEstAll extends AppCompatActivity {
         setContentView(R.layout.activity_fetch_est_all);
 
         //Get All IDs
-        backBtn = findViewById(R.id.backBtn);
 
         //list view
         listView = findViewById(R.id.searchResultsListView);

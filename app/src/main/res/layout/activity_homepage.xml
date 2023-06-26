@@ -32,60 +32,60 @@
             android:id="@+id/hospitals"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_toStartOf="@+id/hotels"
+            android:layout_toStartOf="@+id/transport"
             android:layout_marginEnd="20dp"
             android:background="@drawable/establishment_white"
             android:backgroundTint="@color/darkGreen"/>
 
         <ImageView
-            android:id="@+id/hotels"
+            android:id="@+id/transport"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/ic_baseline_hotel_24"
-            android:backgroundTint="@color/darkGreen" />
-
-        <ImageView
-            android:id="@+id/busses"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_toEndOf="@+id/hotels"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="0dp"
             android:background="@drawable/bus_white"
-            android:backgroundTint="@color/darkGreen"/>
-
-        <ImageView
-            android:id="@+id/flights"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_toStartOf="@+id/attractions"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/hospitals"
-            android:background="@drawable/ic_baseline_flight_24"
-            android:backgroundTint="@color/darkGreen"/>
+            android:backgroundTint="@color/darkGreen" />
 
         <ImageView
             android:id="@+id/attractions"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_below="@+id/hotels"
+            android:layout_toEndOf="@+id/transport"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="0dp"
             android:background="@drawable/ic_baseline_attractions_24"
             android:backgroundTint="@color/darkGreen"/>
 
-        <ImageView
-            android:id="@+id/carsRentals"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_below="@+id/hotels"
-            android:layout_toEndOf="@+id/attractions"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ic_baseline_car_rental_24"
-            android:backgroundTint="@color/darkGreen"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/flights"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_toStartOf="@+id/attractions"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_below="@+id/hospitals"-->
+<!--            android:background="@drawable/ic_baseline_flight_24"-->
+<!--            android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/attractions"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_below="@+id/transport"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:background="@drawable/ic_baseline_attractions_24"-->
+<!--            android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/carsRentals"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_below="@+id/transport"-->
+<!--            android:layout_toEndOf="@+id/attractions"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:background="@drawable/ic_baseline_car_rental_24"-->
+<!--            android:backgroundTint="@color/darkGreen"/>-->
 
 <!--        <ImageView-->
 <!--            android:id="@+id/activities"-->

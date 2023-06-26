@@ -8,8 +8,6 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import hajarshaufi.fyp.R;
-import hajarshaufi.fyp.activity.AdminHomepage;
-import hajarshaufi.fyp.activity.AdminManageAccount;
 
 public class AdminProfile extends AppCompatActivity {
 
@@ -24,7 +22,7 @@ public class AdminProfile extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.bottomDashboard:
-                    startActivity(new Intent(getApplicationContext(), AdminHomepage.class));
+                    startActivity(new Intent(getApplicationContext(), AdminEstablishment.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;

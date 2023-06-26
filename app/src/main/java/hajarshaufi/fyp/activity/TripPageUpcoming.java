@@ -35,7 +35,7 @@ public class TripPageUpcoming extends AppCompatActivity {
     ListView listView;
     TextView upcoming, completed, cancelled;
 
-    String url = "http://192.168.212.86/mymedtrip/fetchTripUpcoming.php";
+    String url = "http://192.168.234.86/mymedtrip/fetchTripUpcoming.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class TripPageUpcoming extends AppCompatActivity {
             }
         });
 
-        //completed button
+        //cancelled button
         cancelled.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

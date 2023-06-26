@@ -31,7 +31,7 @@ public class NearMe extends AppCompatActivity {
     ListView listView;
     EstAdapter estAdapter;
     Establishment establishment;
-    String url = "http://192.168.212.86/mymedtrip/fetchEstNearMe.php";
+    String url = "http://192.168.234.86/mymedtrip/fetchEstNearMe.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

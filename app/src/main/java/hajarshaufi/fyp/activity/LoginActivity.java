@@ -27,7 +27,10 @@ import hajarshaufi.fyp.databinding.ActivityLoginBinding;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
-    String url = "http://192.168.212.86/mymedtrip/login.php";
+    String url = "http://192.168.234.86/mymedtrip/login.php";
+    private String username, password, placeholder;
+
+    private static String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String username = binding.edtUsername.getText().toString().trim();
-                String password = binding.edtPassword.getText().toString().trim();
+                username = binding.edtUsername.getText().toString().trim();
+                password = binding.edtPassword.getText().toString().trim();
                 String generatedPassword = "null";
 
                 if (TextUtils.isEmpty(username)){
@@ -90,13 +93,15 @@ public class LoginActivity extends AppCompatActivity {
                                         }
                                         //Login User
                                         else if (object.get("code").equals("200")) {
+                                            value = binding.edtUsername.getText().toString();
                                             Toast.makeText(LoginActivity.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(getApplicationContext(), Homepage.class));
                                         }
                                         //Login Admin
                                         else if (object.get("code").equals("201")) {
+                                            value = binding.edtUsername.getText().toString();
                                             Toast.makeText(LoginActivity.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), AdminHomepage.class));
+                                            startActivity(new Intent(getApplicationContext(), AdminEstablishment.class));
                                         }
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -136,5 +141,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
+    }
+
+    public static String getValue() {
+        return value;
     }
 }

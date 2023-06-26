@@ -2,28 +2,26 @@ package hajarshaufi.fyp.java;
 
 public class Account {
 
-    private String accountID;
+    private String id;
     private String username;
     private String password;
-    private String retypePass;
     private String name;
     private String email;
 
-    public Account(String accountID, String username, String password, String retypePass, String name, String email) {
-        this.accountID = accountID;
+    public Account(String id, String username, String password, String name, String email) {
+        this.id = id;
         this.username = username;
         this.password = password;
-        this.retypePass = retypePass;
         this.name = name;
         this.email = email;
     }
 
-    public String getAccountID() {
-        return accountID;
+    public String getId() {
+        return id;
     }
 
-    public void setAccountID(String accountID) {
-        this.accountID = accountID;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -40,14 +38,6 @@ public class Account {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getRetypePass() {
-        return retypePass;
-    }
-
-    public void setRetypePass(String retypePass) {
-        this.retypePass = retypePass;
     }
 
     public String getName() {
