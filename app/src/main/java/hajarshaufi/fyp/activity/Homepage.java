@@ -46,8 +46,8 @@ public class Homepage extends AppCompatActivity {
         attractions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(Homepage.this, SearchAttractions.class);
-                //startActivity(intent);
+                Intent intent = new Intent(Homepage.this, Attractions.class);
+                startActivity(intent);
             }
         });
 

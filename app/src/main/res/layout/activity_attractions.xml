@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Attractions">
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attractions Places"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="8dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="6dp"
+        android:background="@drawable/search_bar"
+        android:layout_alignParentTop="true"/>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVw"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="The Ruins of A'Famosa"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout2"
+            android:layout_below="@+id/layout"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Baba Nyonya Heritage Museum"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout3"
+            android:layout_below="@+id/layout2"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Jonker Street"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout4"
+            android:layout_below="@+id/layout3"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Shore Sky Tower"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout5"
+            android:layout_below="@+id/layout4"
+            android:paddingStart="4dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/route5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Melaka River Cruise"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/mark5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout6"-->
+<!--            android:layout_below="@+id/layout5"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route6"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Melaka Wonderland Theme Park"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark6"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/layout7"-->
+<!--            android:layout_below="@+id/layout6"-->
+<!--            android:paddingStart="4dp"-->
+<!--            android:background="@drawable/question_design">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/route7"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:fontFamily="@font/inter"-->
+<!--                android:text="Menara Taming Sari"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/mark7"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:background="@drawable/ic_baseline_navigate_next_24"-->
+<!--                android:backgroundTint="@color/darkGreen"/>-->
+
+<!--        </RelativeLayout>-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookAttr"
+            android:layout_below="@+id/layout5"
+            android:paddingStart="4dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/question_design">
+
+            <TextView
+                android:id="@+id/busText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter"
+                android:text="Save/Book Attraction"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/busMark"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                android:backgroundTint="@color/darkGreen"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

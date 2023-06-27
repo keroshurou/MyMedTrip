@@ -23,7 +23,6 @@
         <item>Select City</item>
         <item>All</item>
         <item>Alor Gajah</item>
-        <item>Melaka Tengah</item>
         <item>Krubong</item>
     </string-array>
 
@@ -96,4 +95,53 @@
     <!--Article 2/Question2-->
     <string name="a2p1">After registration, user cannot change their username. However, user could change their password at profile tab</string>
     <string name="a2p2">Steps to change password:</string>
+
+    <!--Afamosa-->
+    <string name="afamosap1">A former Portuguese Fortress, A\'Famosa is among the oldest surviving European architectural remains in Southeast Asia. One of Malacca\'s famous sightseeing spots, the only remaining part of the fortress is a small gate house, known as Porta de Santiago.</string>
+    <string name="afamosap2">A\'Famosa ruins is a wonderful spot for photography lovers, who can capture some stunning images of this crumbling structure. History lovers would be interested to note that A\'Famosa was once home to an entire lot of the Portuguese administrative officials.</string>
+
+    <!--BabaNyonya-->
+    <string name="timingBN">Monday - Thursday: 10:00 AM - 5:00 PM
+Friday - Saturday: 10:00 AM - 6:00 PM
+Last Admission: 4:15 or 5:15
+Museum is closed for three days during the Chinese New Year</string>
+    <string name="feeBN">Adult: RM 16
+Child (5-12 years): RM 11</string>
+
+    <string name="babanyonyap1">Baba Nyonya Heritage Museum at Jalan Tun Tan Cheng Lock is a complex of three restored houses showcasing the typical 19th-century Chinese-Malays (Baba-Nyonya) residence. The Chinese Palladian houses were converted into Peranakan Museum, now known for its exquisite woodwork, porcelain, and furniture. Guided tours are available.</string>
+    <string name="babanyonyap2">Managed by the Chan Family, Baba &amp; Nyonya Heritage Museum was built by the great grandfather of the Chan family, Chan Kim Lay in 1896 for his upcoming generations to live in. The house consists of three terraces and all the portions are almost 20 feet in width and 180 feet long with an air well in the middle for proper air circulation.</string>
+    <string name="babanyonyap3">The décor and artefacts along with the furniture provide a mesmerising experience. It was named ‘Baba Nyonya’ as ‘Baba’ is used to address the Straits-born gentleman and ‘Nyonya’ is for Straits-born lady in an honorific manner.</string>
+
+    <!--JonkerStreet-->
+    <string name="jonkerp1">Jonker Street, also popular as the Jonker Walk, is the main street of Chinatown, Melaka. It is popular for the shops selling clothes, antiques and souvenirs, apart from being a major street food hub. The highlight of Jonker Street is the night market held here every Saturday and Sunday.</string>
+    <string name="jonkerp2">The bustling Jonker Street is not just about delicious food, artistic creations and bargaining, but it also has a number of attractions in and around it. The numerous museums, temples and mosques, each of them drawing inspiration from all around the world give the visitors the perfect reason to not miss out on them. Jonker Street truly depicts the fast, jolly and rich cultural life of Malaysia and forms a smooth knot between the ancient traditions and modern technology.</string>
+
+    <!--ShoreSkyTower-->
+    <string name="timingShore">8:00 AM - 11:00 PM</string>
+    <string name="feeShore">Adult: RM 23.50
+Child (3-12 years): RM 17
+Include a pack of souvenir postcards</string>
+    <string name="shorep1">The Shore Sky Tower is the tallest building in Melaka, located at the Kampung Bunga Paya Pantai area. Housing an observation deck on the 43rd floor, it offers a breathtaking view up to 50 kilometres on every side with six units of telescopes around the roof and glass deck.</string>
+    <string name="shorep2">The 42nd Level of Tower 1 is the residential and commercial hub with two hotel towers and two residential towers having a shopping gallery at the top and an observation deck at the 43rd Level. The glass floor of the Shore Sky Tower is not for the soft-hearted sending chills down the spine along with a ledge hanging from the building for the adventure lovers.</string>
+
+    <!--MelakaRiverCruise-->
+    <string name="timingRV">Daily: 09:00 AM - 11:00 PM
+Hours may vary or remain closed around Raya Aidilfitri celebrations.</string>
+    <string name="feeRV">Foreigner adults (12 years and above): MYR 30
+Foreigner children (2-12 years): MYR 25
+Local adults (12 years and above): MYR 25
+Local children (2-12 years old): MYR 15
+Malaysian disabled adults: MYR 15
+Malaysian disabled children: MYR 10
+Malaysian senior citizens (60 years and above): MYR 20
+Infants (below 2 years): Free
+Chartered boat (40-seater): MYR 1,100</string>
+    <string name="addInfoRV"> 1) Tickers are available for purchase at the counters located at Spice Garden (Taman Rempah) and Dataran Muara Sungai Melaka. The easiest way is to purchase it online from the official website.
+
+2) Life jackets are provided.</string>
+    <string name="rvp1">Melaka River and Coastal Development Corporation offers a 45-minute round trip cruise covering 9km and several architectural wonders of the city. You will also pass under a few historically significant bridges, such as the Kg. Jawa Bridge (1714), Pasar Bridge (the 1500s), and Tan Kim Seng Bridge (1862). During nighttime cruises, you will also see the Rhythmic Water Fountain. </string>
+    <string name="rvp2">As you sail through the urban fabric of Melaka’s beautiful heritage, you will pass by attractions like the Red Building, Stadhuys, Bastion Middleburg, Jonker Street, pre-war buildings, colorful murals, the Water Wheel, Panggung Bangsawan, Kampung Hulu Mosque, Kampung Morten, Church of St. Francis Xavier, and the Bakau Route. </string>
+    <string name="rvp3">You can opt for the special dinner cruises that they offer, where you will be served an eclectic range of Malay and international meals. The cruises can also be booked for private parties, birthdays, wedding celebrations, engagements, and more.</string>
+
+
 </resources>

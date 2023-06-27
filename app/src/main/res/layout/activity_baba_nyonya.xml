@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BabaNyonya">
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Baba Nyonya Heritage Museum"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="8dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="6dp"
+        android:background="@drawable/search_bar"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVw">
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/baba_nyonya_museum"/>
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/image">
+
+                <TextView
+                    android:id="@+id/txtVw2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#2"
+                    android:fontFamily="@font/inter"
+                    android:textSize="30sp"
+                    android:textColor="@color/darkGrey"/>
+
+                <TextView
+                    android:id="@+id/txtVw3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Among"
+                    android:fontFamily="@font/inter"
+                    android:textSize="14sp"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/txtVw2"
+                    android:textColor="@color/black"
+                    android:layout_alignParentBottom="true"/>
+
+                <TextView
+                    android:id="@+id/txtVw4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Things To Do in Melaka"
+                    android:fontFamily="@font/inter"
+                    android:textSize="14sp"
+                    android:layout_marginStart="4dp"
+                    android:layout_toEndOf="@+id/txtVw3"
+                    android:textColor="@color/blue"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl"
+                android:layout_marginTop="10dp"
+                android:background="@color/lightGreen">
+
+                <RelativeLayout
+                    android:id="@+id/rl3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="6dp">
+
+                    <TextView
+                        android:id="@+id/label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time Required: "
+                        android:fontFamily="@font/inter"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1-2 hours"
+                        android:fontFamily="@font/inter"
+                        android:textSize="12sp"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/label"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl3"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="6dp">
+
+                    <TextView
+                        android:id="@+id/label2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Timings: "
+                        android:fontFamily="@font/inter"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/info2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/timingBN"
+                        android:fontFamily="@font/inter"
+                        android:textSize="12sp"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/label2"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl4"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/label3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Entry Fees: "
+                        android:fontFamily="@font/inter"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/info3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/feeBN"
+                        android:fontFamily="@font/inter"
+                        android:textSize="12sp"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/label3"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtVw5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Baba &amp; Nyonya Heritage Museum, Melaka Overview"
+                android:fontFamily="@font/inter"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/rl2"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/txtVw6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/babanyonyap1"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter"
+                android:layout_below="@+id/txtVw5"
+                android:layout_marginTop="10dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:id="@+id/txtVw7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/babanyonyap2"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter"
+                android:layout_below="@+id/txtVw6"
+                android:layout_marginTop="10dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:id="@+id/txtVw8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/babanyonyap3"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter"
+                android:layout_below="@+id/txtVw7"
+                android:layout_marginTop="10dp"
+                android:justificationMode="inter_word"
+                android:layout_marginBottom="50dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
