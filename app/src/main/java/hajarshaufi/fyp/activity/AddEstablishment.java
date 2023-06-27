@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -81,6 +83,16 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
 
                 //Call method, getEst = get all data that need to pass to database
                 getEst();
+
+                Runnable runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        long longTime2 = System.currentTimeMillis();
+                        startActivity(new Intent(getApplicationContext(), AdminEstablishment.class));
+                    }
+                };
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(runnable, 3000); //delayed 3 seconds
             }
         });
 
@@ -210,5 +222,12 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(AddEstablishment.this, AdminEstablishment.class));
     }
 }

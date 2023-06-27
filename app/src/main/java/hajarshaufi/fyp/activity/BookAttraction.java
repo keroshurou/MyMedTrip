@@ -6,6 +6,8 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -66,7 +68,7 @@ public class BookAttraction extends AppCompatActivity{
         bookBtn = findViewById(R.id.bookBtn);
 
 
-        //Attractions List
+        //AttrBooking List
         List<String> attrList = new ArrayList<>();
         attrList.add("Select Attraction");
         attrList.add("A'Famosa");
@@ -75,7 +77,7 @@ public class BookAttraction extends AppCompatActivity{
         attrList.add("Shore Sky Tower");
         attrList.add("Melaka River Cruise");
 
-        //Spinner Attractions
+        //Spinner AttrBooking
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(BookAttraction.this, android.R.layout.simple_spinner_item, attrList);
         arrayAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         selectAttraction.setAdapter(arrayAdapter);
@@ -179,6 +181,16 @@ public class BookAttraction extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 getData();
+
+                Runnable runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        long longTime2 = System.currentTimeMillis();
+                        startActivity(new Intent(getApplicationContext(), TripPageAttractions.class));
+                    }
+                };
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(runnable, 3000); //delayed 3 seconds
             }
         });
     }
@@ -270,6 +282,7 @@ public class BookAttraction extends AppCompatActivity{
         // below line is to make
         // a json object request.
         queue.add(request);
+
     }
 
 //    private void fillSpinner(){

@@ -62,7 +62,7 @@ public class Attractions extends AppCompatActivity {
             }
         });
 
-        //Book Attractions
+        //Book AttrBooking
         binding.bookAttr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -41,7 +41,7 @@ public class Profile extends AppCompatActivity {
     private static String email;
     private static String password;
     //List<Account> retrieveList;
-    String url = "http://192.168.234.86/mymedtrip/profile.php?username=user";
+    String url = "http://192.168.234.86/mymedtrip/profile.php?username=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

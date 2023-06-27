@@ -22,10 +22,8 @@ public class AdminAccountAdapter extends ArrayAdapter<Admin> {
 
     TextView adminName, adminStaffNo;
 
-    private String name, staffNo;
-
     public AdminAccountAdapter(@NonNull Context context, List<Admin> adminList) {
-        super(context, R.layout.admin_account_design);
+        super(context, R.layout.admin_account_design, adminList);
 
         this.context = context;
         this.adminArrayList = adminList;
@@ -38,14 +36,11 @@ public class AdminAccountAdapter extends ArrayAdapter<Admin> {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.admin_account_design,
                 null, true);
 
-        adminName = itemView.findViewById(R.id.staffName);
+        adminName = itemView.findViewById(R.id.adminName);
         adminStaffNo = itemView.findViewById(R.id.staffNo);
 
         adminName.setText(adminArrayList.get(position).getName());
         adminStaffNo.setText(adminArrayList.get(position).getStaffNo());
-
-        name = adminArrayList.get(position).getName();
-        staffNo = adminArrayList.get(position).getStaffNo();
 
         return itemView;
     }

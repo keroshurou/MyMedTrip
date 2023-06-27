@@ -2,7 +2,10 @@ package hajarshaufi.fyp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -32,7 +35,7 @@ public class AddAccount extends AppCompatActivity {
     EditText usernameAccEdt, passwordAccEdt, passwordAccReEdt, staffNameEdt, staffNoEdt;
     Button addAcc;
     ImageView backBtn;
-    String url = "http://192.168.213.86/mymedtrip/addAcc.php";
+    String url = "http://192.168.234.86/mymedtrip/addAcc.php";
 
     private String username, password, retypePass, staffName, staffNo;
 
@@ -53,6 +56,15 @@ public class AddAccount extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getAcc();
+                Runnable runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        long longTime2 = System.currentTimeMillis();
+                        startActivity(new Intent(getApplicationContext(), AdminManageAccount.class));
+                    }
+                };
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(runnable, 3000); //delayed 3 seconds
             }
         });
     }
@@ -164,4 +176,10 @@ public class AddAccount extends AppCompatActivity {
         queue.add(request);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(AddAccount.this, AdminManageAccount.class));
+    }
 }

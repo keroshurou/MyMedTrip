@@ -24,28 +24,27 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import hajarshaufi.fyp.R;
-import hajarshaufi.fyp.java.Trip;
+import hajarshaufi.fyp.java.BusBooking;
 
-//This class act as hospital/clinic (Trip) View
-public class TripPageUpcoming extends AppCompatActivity {
+public class TripPageBus extends AppCompatActivity {
 
-    public static ArrayList<Trip> tripUpcomingList = new ArrayList<>();
-    Trip trip;
-    TripUpAdapter tripUpAdapter;
+    public static ArrayList<BusBooking> busBookingArrayList = new ArrayList<>();
+    BusBooking busBooking;
+    BusBookAdapter busBookAdapter;
     ListView listView;
     TextView hospitalTag, busTag, attrTag;
 
-    String url = "http://192.168.234.86/mymedtrip/fetchTripUpcoming.php";
+    String url = "http://192.168.234.86/mymedtrip/fetchBusBooking.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trip_page_upcoming);
+        setContentView(R.layout.activity_trip_page_bus);
 
         //list view
-        listView = findViewById(R.id.savedListView);
-        tripUpAdapter = new TripUpAdapter(this, tripUpcomingList);
-        listView.setAdapter(tripUpAdapter);
+        listView = findViewById(R.id.busListview);
+        busBookAdapter = new BusBookAdapter(this, busBookingArrayList);
+        listView.setAdapter(busBookAdapter);
 
         //Get All ids
         hospitalTag = findViewById(R.id.hospitalTag);
@@ -53,16 +52,16 @@ public class TripPageUpcoming extends AppCompatActivity {
         attrTag = findViewById(R.id.attrTag);
 
         //Hospital button
-        busTag.setOnClickListener(new View.OnClickListener() {
+        hospitalTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TripPageBus.class));
+                startActivity(new Intent(getApplicationContext(), TripPageUpcoming.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
         });
 
-        //Attraction button
+        //AttrBooking button
         attrTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,12 +98,12 @@ public class TripPageUpcoming extends AppCompatActivity {
             return false;
         });
 
-        getDataUpcoming();
+        getBusBookingData();
     }
 
-    private void getDataUpcoming() {
+    private void getBusBookingData() {
 
-        RequestQueue queue = Volley.newRequestQueue(TripPageUpcoming.this);
+        RequestQueue queue = Volley.newRequestQueue(TripPageBus.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -112,7 +111,7 @@ public class TripPageUpcoming extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        tripUpcomingList.clear();
+                        busBookingArrayList.clear();
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             String success = jsonObject.getString("success");
@@ -125,23 +124,14 @@ public class TripPageUpcoming extends AppCompatActivity {
                                     JSONObject object = jsonArray.getJSONObject(i);
 
                                     String id = object.getString("id");
-                                    String tripdate = object.getString("tripdate");
-                                    String triptime = object.getString("triptime");
-                                    String status = object.getString("status");
-                                    String type = object.getString("type");
-                                    String name = object.getString("name");
-                                    String address = object.getString("address");
-                                    String days = object.getString("days");
-                                    String hours = object.getString("hours");
-                                    String days2 = object.getString("days2");
-                                    String hours2 = object.getString("hours2");
-                                    String city = object.getString("city");
-                                    String tag1 = object.getString("tag1");
-                                    String tag2 = object.getString("tag2");
+                                    String route = object.getString("route");
+                                    String date = object.getString("date");
+                                    String time = object.getString("time");
+                                    String tickets = object.getString("tickets");
 
-                                    trip = new Trip(id,tripdate,triptime,status,type,name,address,days,hours,days2,hours2,city,tag1,tag2);
-                                    tripUpcomingList.add(trip);
-                                    tripUpAdapter.notifyDataSetChanged();
+                                    busBooking = new BusBooking(id, route, date, time, tickets);
+                                    busBookingArrayList.add(busBooking);
+                                    busBookAdapter.notifyDataSetChanged();
                                 }
                             }
 
@@ -154,7 +144,7 @@ public class TripPageUpcoming extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(TripPageUpcoming.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(TripPageBus.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
