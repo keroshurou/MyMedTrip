@@ -27,7 +27,7 @@ import hajarshaufi.fyp.databinding.ActivityLoginBinding;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
-    String url = "http://192.168.234.86/mymedtrip/login.php";
+    String url = "http://10.200.66.4/mymedtrip/login.php";
     private String username, password, placeholder;
 
     private static String value;

@@ -31,7 +31,7 @@ public class AdminProfile extends AppCompatActivity {
     private static String password;
     private static String staffNo;
     //List<Account> retrieveList;
-    String url = "http://192.168.234.86/mymedtrip/adminProfile.php?username=";
+    String url = "http://10.200.66.4/mymedtrip/adminProfile.php?username=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

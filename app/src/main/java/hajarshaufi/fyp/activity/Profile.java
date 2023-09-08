@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,7 +42,7 @@ public class Profile extends AppCompatActivity {
     private static String email;
     private static String password;
     //List<Account> retrieveList;
-    String url = "http://192.168.234.86/mymedtrip/profile.php?username=";
+    String url = "http://10.200.66.4/mymedtrip/profile.php?username=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,22 @@ public class Profile extends AppCompatActivity {
         usernameEdt = findViewById(R.id.username);
 
         getData();
+
+        //Personal Details
+        binding.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile.this, PersonalDetails.class));
+            }
+        });
+
+        //Medical Details
+        binding.layout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile.this, MedicalDetails.class));
+            }
+        });
 
         //Bottom navigation view
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);

@@ -52,7 +52,7 @@ public class BookAttraction extends AppCompatActivity{
     private TimePickerDialog timePicker;
     private String selectedAttr, attractions, date, time, tickets;
 
-    String url = "http://192.168.234.86/mymedtrip/addAttrBooking.php";
+    String url = "http://10.200.66.4/mymedtrip/addAttrBooking.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

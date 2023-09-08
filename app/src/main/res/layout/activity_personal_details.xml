@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PersonalDetails">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/layout">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/account_white"
+            android:backgroundTint="@color/darkGreen"/>
+
+        <TextView
+            android:id="@+id/FAQs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/inter"
+            android:text="Personal Details"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/icon"/>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/editBtn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/ic_baseline_edit_24"
+        android:backgroundTint="@color/darkGreen"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageView
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/darkGreen"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/layout"/>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@+id/bar">
+
+        <TextView
+            android:id="@+id/txtVw2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Null"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="@font/inter"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/txtVw2"/>
+
+        <TextView
+            android:id="@+id/txtVw3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Null@gmail.com"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="@font/inter"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/txtVw3"/>
+
+        <TextView
+            android:id="@+id/txtVw4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"
+            android:layout_below="@+id/email"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Null"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="@font/inter"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/txtVw4"/>
+
+        <TextView
+            android:id="@+id/txtVw5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"
+            android:layout_below="@+id/username"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Null"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="@font/inter"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/txtVw5"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

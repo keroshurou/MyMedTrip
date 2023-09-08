@@ -34,7 +34,7 @@ public class TripPageCompleted extends AppCompatActivity {
     ListView listView;
     TextView upcoming, completed, cancelled;
 
-    String url = "http://192.168.234.86/mymedtrip/fetchTripCompleted.php";
+    String url = "http://10.200.66.4/mymedtrip/fetchTripCompleted.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

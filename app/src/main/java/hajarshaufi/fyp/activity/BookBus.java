@@ -49,7 +49,7 @@ public class BookBus extends AppCompatActivity {
     private DatePickerDialog datePicker;
     private String route, time, date, tickets;
 
-    String url = "http://192.168.234.86/mymedtrip/addBusBooking.php";
+    String url = "http://10.200.66.4/mymedtrip/addBusBooking.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
