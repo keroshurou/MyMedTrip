@@ -27,7 +27,7 @@ import hajarshaufi.fyp.databinding.ActivityLoginBinding;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
-    String url = "http://10.200.66.4/mymedtrip/login.php";
+    String url = "http://10.200.66.178/mymedtrip/login.php";
     private String username, password, placeholder;
 
     private static String value;
@@ -49,8 +49,10 @@ public class LoginActivity extends AppCompatActivity {
                 String generatedPassword = "null";
 
                 if (TextUtils.isEmpty(username)){
+                    binding.edtUsername.requestFocus();
                     binding.edtUsername.setError("Please enter username");
                 } else if(TextUtils.isEmpty(password)){
+                    binding.edtPassword.requestFocus();
                     binding.edtPassword.setError("Please enter password");
                 }else {
 

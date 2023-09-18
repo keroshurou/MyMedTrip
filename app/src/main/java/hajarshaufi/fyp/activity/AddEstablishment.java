@@ -39,7 +39,7 @@ public class AddEstablishment extends AppCompatActivity implements AdapterView.O
 
     private String type, establishmentName, address, days, hours, days2, hours2, city, tag1, tag2, tag3;
 
-    String url = "http://10.200.66.4/mymedtrip/addEst.php";
+    String url = "http://10.200.66.178/mymedtrip/addEst.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

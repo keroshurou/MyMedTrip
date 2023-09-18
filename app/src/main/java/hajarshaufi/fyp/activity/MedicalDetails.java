@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +24,10 @@ import hajarshaufi.fyp.R;
 public class MedicalDetails extends AppCompatActivity {
 
     TextView tvBloodType, tvAllergies, tvMedCon, tvMedications;
+    private static String bloodType, allergies, medCon, medications;
+    ImageButton edtBtn;
 
-    String url = "http://10.200.66.4/mymedtrip/medDetails.php?username=";
+    String url = "http://10.200.66.178/mymedtrip/medDetails.php?username=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +39,16 @@ public class MedicalDetails extends AppCompatActivity {
         tvAllergies = findViewById(R.id.allergies);
         tvMedCon = findViewById(R.id.medCon);
         tvMedications = findViewById(R.id.medications);
+        edtBtn = findViewById(R.id.editBtn);
 
         getData();
+
+        edtBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MedicalDetails.this, EditMedDetails.class));
+            }
+        });
     }
 
     private void getData() {
@@ -93,12 +105,32 @@ public class MedicalDetails extends AppCompatActivity {
         tvAllergies.setText(dataAllergies);
         tvMedCon.setText(dataMedConditions);
         tvMedications.setText(dataMedications);
+
+        bloodType = dataBloodType;
+        allergies = dataAllergies;
+        medCon = dataMedConditions;
+        medications = dataMedications;
+    }
+
+    public static String getBloodType() {
+        return bloodType;
+    }
+
+    public static String getAllergies(){
+        return allergies;
+    }
+
+    public static String getMedCon(){
+        return medCon;
+    }
+
+    public static String getMedications(){
+        return medications;
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
         startActivity(new Intent(MedicalDetails.this, Profile.class));
     }
 }

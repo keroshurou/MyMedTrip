@@ -42,7 +42,7 @@ public class Profile extends AppCompatActivity {
     private static String email;
     private static String password;
     //List<Account> retrieveList;
-    String url = "http://10.200.66.4/mymedtrip/profile.php?username=";
+    String url = "http://10.200.66.178/mymedtrip/profile.php?username=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,14 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Profile.this, MedicalDetails.class));
+            }
+        });
+
+        //logout
+        binding.logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile.this, LoginActivity.class));
             }
         });
 

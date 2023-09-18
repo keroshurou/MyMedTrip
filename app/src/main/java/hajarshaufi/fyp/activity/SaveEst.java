@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -46,7 +47,7 @@ public class SaveEst extends AppCompatActivity {
     TextView estType,estName,estAddress,estDays,estHours,estDays2,estHours2,estCity,estTag1,estTag2,estTag3;
     private String type,name,address,days,hours,days2,hours2,city,tag1,tag2,tag3;
     private String tripdate,triptime,status,tripType,tripName, tripAddress, tripDays, tripHours, tripDays2, tripHours2, tripCity, tripTag1, tripTag2;
-    String url = "http://10.200.66.4/mymedtrip/addTrip.php";
+    String url = "http://10.200.66.178/mymedtrip/addTrip.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -171,8 +172,16 @@ public class SaveEst extends AppCompatActivity {
         tripTag1 = estTag2.getText().toString();
         tripTag2 = estTag3.getText().toString();
 
-        addDataToDatabase(tripdate, triptime, status, tripType, tripName, tripAddress, tripDays, tripHours,
-                tripDays2, tripHours2, tripCity, tripTag1, tripTag2);
+        if (TextUtils.isEmpty(tripdate)){
+            dateEdt.requestFocus();
+            dateEdt.setError("Please enter date");
+        } else if(TextUtils.isEmpty(triptime)){
+            timeEdt.requestFocus();
+            timeEdt.setError("Please enter time");
+        } else {
+            addDataToDatabase(tripdate, triptime, status, tripType, tripName, tripAddress, tripDays, tripHours,
+                    tripDays2, tripHours2, tripCity, tripTag1, tripTag2);
+        }
 
     }
 
@@ -255,6 +264,8 @@ public class SaveEst extends AppCompatActivity {
         // below line is to make
         // a json object request.
         queue.add(request);
+
+        startActivity(new Intent(SaveEst.this, TripPageUpcoming.class));
 
     }
 

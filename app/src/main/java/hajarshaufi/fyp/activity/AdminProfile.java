@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ public class AdminProfile extends AppCompatActivity {
     private static String password;
     private static String staffNo;
     //List<Account> retrieveList;
-    String url = "http://10.200.66.4/mymedtrip/adminProfile.php?username=";
+    String url = "http://10.200.66.178/mymedtrip/adminProfile.php?username=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,22 @@ public class AdminProfile extends AppCompatActivity {
         usernameEdt = findViewById(R.id.username);
 
         getData();
+
+        //Personal Details NOT FINISHED YET
+        binding.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminProfile.this, PersonalDetails.class));
+            }
+        });
+
+        //logout
+        binding.logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminProfile.this, LoginActivity.class));
+            }
+        });
 
         //Bottom Navigation View
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -71,6 +88,7 @@ public class AdminProfile extends AppCompatActivity {
     }
 
     private void getData() {
+
         String username = LoginActivity.getValue();
 
         if (username.equals("")) {

@@ -36,7 +36,7 @@ public class AdminManageAccount extends AppCompatActivity {
     ListView listView;
     AdminAccountAdapter adminAccountAdapter;
     Admin admin;
-    String url = "http://10.200.66.4/mymedtrip/fetchAdmin.php";
+    String url = "http://10.200.66.178/mymedtrip/fetchAdmin.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

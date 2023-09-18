@@ -34,7 +34,7 @@ public class TripPageBus extends AppCompatActivity {
     ListView listView;
     TextView hospitalTag, busTag, attrTag;
 
-    String url = "http://10.200.66.4/mymedtrip/fetchBusBooking.php";
+    String url = "http://10.200.66.178/mymedtrip/fetchBusBooking.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

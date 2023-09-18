@@ -64,80 +64,80 @@
             android:layout_marginTop="20dp"
             android:layout_below="@+id/username"/>
 
-        <!--        <RelativeLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="40dp"-->
-        <!--            android:id="@+id/layout"-->
-        <!--            android:layout_below="@id/bar"-->
-        <!--            android:layout_marginTop="10dp"-->
-        <!--            android:layout_marginStart="10dp">-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/layout"
+                    android:layout_below="@id/bar"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
 
-        <!--            <ImageView-->
-        <!--                android:id="@+id/icon"-->
-        <!--                android:layout_width="30dp"-->
-        <!--                android:layout_height="30dp"-->
-        <!--                android:layout_centerVertical="true"-->
-        <!--                android:background="@drawable/account_white"-->
-        <!--                android:backgroundTint="@color/darkGreen"/>-->
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/account_white"
+                        android:backgroundTint="@color/darkGreen"/>
 
-        <!--            <TextView-->
-        <!--                android:id="@+id/FAQs"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_centerVertical="true"-->
-        <!--                android:fontFamily="@font/inter"-->
-        <!--                android:text="Personal Detail"-->
-        <!--                android:layout_marginStart="10dp"-->
-        <!--                android:textColor="@color/black"-->
-        <!--                android:textSize="16sp"-->
-        <!--                android:textStyle="bold"-->
-        <!--                android:layout_toEndOf="@+id/icon"/>-->
+                    <TextView
+                        android:id="@+id/FAQs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter"
+                        android:text="Personal Detail"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/icon"/>
 
-        <!--        </RelativeLayout>-->
+                </RelativeLayout>
 
-        <!--        <RelativeLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="40dp"-->
-        <!--            android:id="@+id/layout2"-->
-        <!--            android:layout_below="@id/layout"-->
-        <!--            android:layout_marginTop="10dp"-->
-        <!--            android:layout_marginStart="10dp">-->
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:id="@+id/layout2"-->
+<!--                    android:layout_below="@id/layout"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginStart="10dp">-->
 
-        <!--            <ImageView-->
-        <!--                android:id="@+id/icon2"-->
-        <!--                android:layout_width="30dp"-->
-        <!--                android:layout_height="30dp"-->
-        <!--                android:layout_centerVertical="true"-->
-        <!--                android:background="@drawable/ic_baseline_medical_information_24"-->
-        <!--                android:backgroundTint="@color/darkGreen"/>-->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/icon2"-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:background="@drawable/ic_baseline_medical_information_24"-->
+<!--                        android:backgroundTint="@color/darkGreen"/>-->
 
-        <!--            <TextView-->
-        <!--                android:id="@+id/appDetail"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_centerVertical="true"-->
-        <!--                android:fontFamily="@font/inter"-->
-        <!--                android:text="Medical Detail"-->
-        <!--                android:layout_marginStart="10dp"-->
-        <!--                android:textColor="@color/black"-->
-        <!--                android:textSize="16sp"-->
-        <!--                android:textStyle="bold"-->
-        <!--                android:layout_toEndOf="@+id/icon2"/>-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/appDetail"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:fontFamily="@font/inter"-->
+<!--                        android:text="Medical Detail"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_toEndOf="@+id/icon2"/>-->
 
-        <!--        </RelativeLayout>-->
+<!--                </RelativeLayout>-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/logout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:fontFamily="@font/inter"-->
-<!--            android:text="Logout"-->
-<!--            android:layout_marginStart="10dp"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="16sp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:layout_marginBottom="20dp"-->
-<!--            android:layout_alignParentBottom="true"/>-->
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="Logout"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
 
