@@ -1,10 +1,12 @@
 package hajarshaufi.fyp.activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -78,7 +81,45 @@ public class Profile extends AppCompatActivity {
         binding.logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Profile.this, LoginActivity.class));
+
+                // Create an AlertDialog Builder
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Profile.this);
+
+                // Get the custom dialog layout
+                LayoutInflater inflater = getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.change_status_dialog, null);
+
+                // Set the custom layout to the dialog
+                dialogBuilder.setView(dialogView);
+
+                // Initialize the dialog elements
+                TextView dialogTitle = dialogView.findViewById(R.id.alertTitle);
+                TextView dialogMessage = dialogView.findViewById(R.id.alertMessage);
+                TextView positiveButton = dialogView.findViewById(R.id.yesBtn);
+                TextView negativeButton = dialogView.findViewById(R.id.cancelBtn);
+
+                dialogTitle.setText("Logout");
+                dialogMessage.setText("Are you sure you want to logout?");
+
+                // Create and show the dialog
+                AlertDialog dialog = dialogBuilder.create();
+                dialog.show();
+
+                // Set click listeners for the buttons
+                positiveButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(Profile.this, LoginActivity.class));
+                    }
+                });
+
+                negativeButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
             }
         });
 

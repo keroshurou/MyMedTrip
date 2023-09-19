@@ -297,6 +297,6 @@ public class BookAttraction extends AppCompatActivity{
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(BookAttraction.this, Attractions.class));
+        startActivity(new Intent(BookAttraction.this, MainpageAttr.class));
     }
 }

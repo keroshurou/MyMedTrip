@@ -188,5 +188,6 @@ public class TripPageAttrCanc extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
+        Toast.makeText(this, "Logout first to exit", Toast.LENGTH_SHORT).show();
     }
 }

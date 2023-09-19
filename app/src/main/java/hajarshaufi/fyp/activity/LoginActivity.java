@@ -29,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
     String url = "http://10.200.66.178/mymedtrip/login.php";
     private String username, password, placeholder;
+    private long backPressedTime = 0;
+
 
     private static String value;
 
@@ -142,7 +144,14 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+            // This will exit the application
+            finish();
+        } else {
+            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 
     public static String getValue() {
