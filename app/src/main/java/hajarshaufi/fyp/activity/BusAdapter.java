@@ -31,52 +31,51 @@ import java.util.List;
 import java.util.Map;
 
 import hajarshaufi.fyp.R;
-import hajarshaufi.fyp.java.AttrBooking;
 import hajarshaufi.fyp.java.BusBooking;
 
-public class AttractionsAdapter extends ArrayAdapter<AttrBooking> {
+public class BusAdapter extends ArrayAdapter<BusBooking> {
 
     Context context;
-    List<AttrBooking> attrBookingList;
-    TextView tvAttr, tvDate, tvTime, tvTickets;
+    List<BusBooking> busBookingList;
+    TextView tvRoute, tvDate, tvTime, tvTickets;
 
     Button btnChangeStatus;
     private String id;
-    String url = "http://10.200.66.178/mymedtrip/updateAttr.php";
+    String url = "http://10.200.66.178/mymedtrip/updateBus.php";
 
-    public AttractionsAdapter(@NonNull Context context, List<AttrBooking> attrBookings) {
-        super(context, R.layout.attractions_design, attrBookings);
+    public BusAdapter(@NonNull Context context, List<BusBooking> busBookings) {
+        super(context, R.layout.busbookings_design ,busBookings);
 
         this.context = context;
-        this.attrBookingList = attrBookings;
+        this.busBookingList = busBookings;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.attractions_design,
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.busbookings_design,
                 null, true);
 
         //Get All ids
-        tvAttr = itemView.findViewById(R.id.attrName);
-        tvDate = itemView.findViewById(R.id.attrDate);
-        tvTime = itemView.findViewById(R.id.attrTime);
-        tvTickets = itemView.findViewById(R.id.attrTickets);
+        tvRoute = itemView.findViewById(R.id.routeName);
+        tvDate = itemView.findViewById(R.id.bbDate);
+        tvTime = itemView.findViewById(R.id.bbTime);
+        tvTickets = itemView.findViewById(R.id.bbTickets);
         btnChangeStatus = itemView.findViewById(R.id.btnChangeStatus);
 
         //Set Text
-        tvAttr.setText(attrBookingList.get(position).getAttractions());
-        tvDate.setText(attrBookingList.get(position).getDate());
-        tvTime.setText(attrBookingList.get(position).getTime());
-        tvTickets.setText(attrBookingList.get(position).getTickets());
+        tvRoute.setText(busBookingList.get(position).getRoute());
+        tvDate.setText(busBookingList.get(position).getDate());
+        tvTime.setText(busBookingList.get(position).getTime());
+        tvTickets.setText(busBookingList.get(position).getTickets());
 
         //Change Status
         btnChangeStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                id = attrBookingList.get(position).getId();
+                id = busBookingList.get(position).getId();
                 //Toast.makeText(context, id, Toast.LENGTH_SHORT).show();
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
@@ -123,15 +122,15 @@ public class AttractionsAdapter extends ArrayAdapter<AttrBooking> {
                                 // For example:
                                 if ("Upcoming".equals(selectedOption)) {
                                     updateUpcoming();
-                                    Intent intent = new Intent(itemView.getContext(), TripPageAttrUp.class);
+                                    Intent intent = new Intent(itemView.getContext(), TripPageBusUp.class);
                                     itemView.getContext().startActivity(intent);
                                 } else if ("Completed".equals(selectedOption)) {
                                     updateCompleted();
-                                    Intent intent = new Intent(itemView.getContext(), TripPageAttrCom.class);
+                                    Intent intent = new Intent(itemView.getContext(), TripPageBusCom.class);
                                     itemView.getContext().startActivity(intent);
                                 } else if ("Cancelled".equals(selectedOption)) {
                                     updateCancelled();
-                                    Intent intent = new Intent(itemView.getContext(), TripPageAttrCanc.class);
+                                    Intent intent = new Intent(itemView.getContext(), TripPageBusCanc.class);
                                     itemView.getContext().startActivity(intent);
                                 }
 

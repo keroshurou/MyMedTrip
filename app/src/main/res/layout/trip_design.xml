@@ -119,10 +119,10 @@
             android:background="@drawable/bar"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnDirection"
+            android:id="@+id/btnChangeStatus"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_baseline_directions_24"
+            android:background="@drawable/ic_baseline_change_circle_24"
             android:backgroundTint="@color/darkGreen"
             android:layout_below="@id/bar"
             android:layout_marginTop="4dp"
@@ -134,7 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:background="@color/white"
-            android:layout_below="@+id/btnDirection"/>
+            android:layout_below="@+id/btnChangeStatus"/>
 
 
     </RelativeLayout>

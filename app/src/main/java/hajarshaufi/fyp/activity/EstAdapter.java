@@ -23,7 +23,7 @@ public class EstAdapter extends ArrayAdapter<Establishment> {
     Context context;
     List<Establishment> arrayEstList;
 
-    Button savedBtn, directBtn;
+    Button savedBtn; //directBtn;
     ImageView icon;
     TextView estType,estName,estAddress,estDays,estHours,estDays2,estHours2,estCity,estTag1,estTag2,estTag3;
 
@@ -54,7 +54,7 @@ public class EstAdapter extends ArrayAdapter<Establishment> {
         estTag2 = itemView.findViewById(R.id.tag2);
         estTag3 = itemView.findViewById(R.id.tag3);
         savedBtn = itemView.findViewById(R.id.addBtnRv);
-        directBtn = itemView.findViewById(R.id.btnDirection);
+        //directBtn = itemView.findViewById(R.id.btnDirection);
 
 
         estType.setText(arrayEstList.get(position).getType());

@@ -30,7 +30,7 @@ public class TripPageBusCanc extends AppCompatActivity {
 
     public static ArrayList<BusBooking> busBookingArrayList = new ArrayList<>();
     BusBooking busBooking;
-    BusBookAdapter busBookAdapter;
+    BusAdapter busBookAdapter;
     ListView listView;
     TextView hospitalTag, busTag, attrTag;
     TextView upcomingTag, completedTag, cancelledTag;
@@ -44,7 +44,7 @@ public class TripPageBusCanc extends AppCompatActivity {
 
         //list view
         listView = findViewById(R.id.busListview);
-        busBookAdapter = new BusBookAdapter(this, busBookingArrayList);
+        busBookAdapter = new BusAdapter(this, busBookingArrayList);
         listView.setAdapter(busBookAdapter);
 
         //Get All ids

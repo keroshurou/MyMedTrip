@@ -66,10 +66,10 @@ public class TripPageCancelled extends AppCompatActivity {
         });
 
         //cancelled tag
-        cancelledTag.setOnClickListener(new View.OnClickListener() {
+        completedTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TripPageCancelled.class));
+                startActivity(new Intent(getApplicationContext(), TripPageCompleted.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }

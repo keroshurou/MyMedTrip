@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/rounded_background">
+
+    <TextView
+        android:id="@+id/alertTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Status"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/alertMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do you want to change status?"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:layout_below="@+id/alertTitle"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/yesBtn"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="Yes"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:layout_below="@+id/alertMessage"
+        android:background="@color/darkGreen"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/cancelBtn"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:layout_below="@+id/alertMessage"
+        android:layout_marginStart="12dp"
+        android:background="@color/darkGreen"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp" />
+
+</RelativeLayout>
