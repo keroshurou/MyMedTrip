@@ -78,6 +78,38 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bookBus"
+        android:layout_below="@+id/layout"
+        android:paddingStart="4dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/question_design">
+
+        <TextView
+            android:id="@+id/busText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/inter"
+            android:text="Book Bus"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/busMark"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/ic_baseline_navigate_next_24"
+            android:backgroundTint="@color/darkGreen"/>
+
+    </RelativeLayout>
+
 <!--    <androidx.appcompat.widget.AppCompatButton-->
 <!--        android:id="@+id/saveTrip"-->
 <!--        android:layout_width="match_parent"-->

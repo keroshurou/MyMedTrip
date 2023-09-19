@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainpageBus">
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bus Routes"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="12dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="6dp"
+        android:background="@drawable/search_bar"
+        android:layout_alignParentTop="true"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/txtVw">
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="40dp"
+            android:layout_alignParentStart="true"
+            android:background="@color/lightGrey">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/batang_melaka_platform"/>
+
+            <TextView
+                android:id="@+id/txtVw1"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Batang Melaka"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:background="@color/darkGreen"
+                android:layout_below="@+id/img1"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentEnd="true"
+            android:background="@color/lightGrey">
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/batu_berendam_platform"/>
+
+            <TextView
+                android:id="@+id/txtVw2"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Batu Berendam
+                (Taman Merdeka)"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:background="@color/darkGreen"
+                android:layout_below="@+id/img2"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rl1"
+            android:background="@color/lightGrey">
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/krubong_platform"/>
+
+            <TextView
+                android:id="@+id/txtVw3"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Krubong"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:background="@color/darkGreen"
+                android:layout_below="@+id/img3"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/rl2"
+            android:background="@color/lightGrey">
+
+            <ImageView
+                android:id="@+id/img4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="18dp"
+                android:src="@drawable/mitc1_platform"/>
+
+            <TextView
+                android:id="@+id/txtVw4"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="MITC 1"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:background="@color/darkGreen"
+                android:layout_below="@+id/img4"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bookBus"
+        android:layout_below="@+id/relativeLayout"
+        android:paddingStart="4dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/question_design">
+
+        <TextView
+            android:id="@+id/busText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/inter"
+            android:text="Book Bus"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/busMark"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/ic_baseline_navigate_next_24"
+            android:backgroundTint="@color/darkGreen"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

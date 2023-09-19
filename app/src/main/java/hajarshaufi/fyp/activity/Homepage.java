@@ -37,7 +37,7 @@ public class Homepage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //if ada flight, guna TypeTransport
-                Intent intent = new Intent(Homepage.this, BusRoutes.class);
+                Intent intent = new Intent(Homepage.this, MainpageBus.class);
                 startActivity(intent);
             }
         });
