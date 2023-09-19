@@ -293,7 +293,7 @@
                 android:textSize="16sp"
                 android:textColor="@color/white"
                 android:background="@drawable/green_button"
-                android:text="update" />
+                android:text="edit" />
 
         </RelativeLayout>
 
