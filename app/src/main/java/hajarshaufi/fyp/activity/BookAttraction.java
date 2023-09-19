@@ -47,9 +47,10 @@ public class BookAttraction extends AppCompatActivity{
     EditText ticketsEdt;
     TextView dateEdt, timeEdt, budgetEdt;
     Button bookBtn;
+    String statusDefault = "upcoming";
     private DatePickerDialog datePicker;
     private TimePickerDialog timePicker;
-    private String selectedAttr, attractions, date, time, tickets;
+    private String selectedAttr, attractions, date, time, tickets, status;
 
     String url = "http://10.200.66.178/mymedtrip/addAttrBooking.php";
 
@@ -185,7 +186,7 @@ public class BookAttraction extends AppCompatActivity{
                     @Override
                     public void run() {
                         long longTime2 = System.currentTimeMillis();
-                        startActivity(new Intent(getApplicationContext(), TripPageAttractionsUp.class));
+                        startActivity(new Intent(getApplicationContext(), TripPageAttrUp.class));
                     }
                 };
                 Handler handler = new Handler(Looper.getMainLooper());
@@ -200,6 +201,7 @@ public class BookAttraction extends AppCompatActivity{
         date = dateEdt.getText().toString();
         time = timeEdt.getText().toString();
         tickets = ticketsEdt.getText().toString();
+        status = statusDefault;
 
         //Set error if any fields is empty
         if (TextUtils.isEmpty(tickets)){
@@ -209,11 +211,11 @@ public class BookAttraction extends AppCompatActivity{
         }else if (TextUtils.isEmpty(time)){
             timeEdt.setError("Please enter time");
         }else{
-            addDataToDatabase(attractions, time, date, tickets);
+            addDataToDatabase(attractions, time, date, tickets,status);
         }
     }
 
-    private void addDataToDatabase(String attractions, String time, String date, String tickets) {
+    private void addDataToDatabase(String attractions, String time, String date, String tickets, String status) {
 
         // url to post our data
         // creating a new variable for our request queue
@@ -273,6 +275,7 @@ public class BookAttraction extends AppCompatActivity{
                 params.put("time", time);
                 params.put("date", date);
                 params.put("tickets", tickets);
+                params.put("status", status);
 
                 // at last we are returning our params.
                 return params;

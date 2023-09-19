@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TripPageAttrCanc">
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Trip"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="8dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="6dp"
+        android:background="@drawable/search_bar"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/hospitalTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVw"
+        android:text="Hospital/Clinic"
+        android:layout_toStartOf="@+id/busTag"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/black"
+        android:background="@drawable/trip_tag"/>
+
+    <TextView
+        android:id="@+id/busTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVw"
+        android:text="Bus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/black"
+        android:background="@drawable/trip_tag"/>
+
+    <TextView
+        android:id="@+id/attrTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVw"
+        android:text="Attractions"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/busTag"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/white"
+        android:background="@drawable/trip_tag_selected"/>
+
+    <TextView
+        android:id="@+id/upcomingTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hospitalTag"
+        android:text="Upcoming"
+        android:layout_toStartOf="@+id/completedTag"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/black"
+        android:background="@drawable/trip_tag"/>
+
+    <TextView
+        android:id="@+id/completedTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/busTag"
+        android:text="Completed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/black"
+        android:background="@drawable/trip_tag"/>
+
+    <TextView
+        android:id="@+id/cancelledTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attrTag"
+        android:text="Cancelled"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/completedTag"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/white"
+        android:background="@drawable/trip_tag_selected"/>
+
+    <ListView
+        android:id="@+id/attrListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNavigationView"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_background"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:elevation="2dp"
+        app:menu="@menu/user_bottom_menu"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        />
+
+</RelativeLayout>

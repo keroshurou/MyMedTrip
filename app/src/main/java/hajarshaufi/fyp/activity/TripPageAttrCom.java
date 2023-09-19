@@ -26,20 +26,21 @@ import java.util.ArrayList;
 import hajarshaufi.fyp.R;
 import hajarshaufi.fyp.java.AttrBooking;
 
-public class TripPageAttractionsUp extends AppCompatActivity {
+public class TripPageAttrCom extends AppCompatActivity {
 
     public static ArrayList<AttrBooking> attrBookingArrayList = new ArrayList<>();
     AttrBooking attrBooking;
     AttractionsAdapter attractionsAdapter;
     ListView listView;
     TextView hospitalTag, busTag, attrTag;
+    TextView upcomingTag, completedTag, cancelledTag;
 
-    String url = "http://10.200.66.178/mymedtrip/fetchAttrBooking.php";
+    String url = "http://10.200.66.178/mymedtrip/fetchAttrCom.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trip_page_attractions_up);
+        setContentView(R.layout.activity_trip_page_attr_com);
 
         //list view
         listView = findViewById(R.id.attrListView);
@@ -50,6 +51,29 @@ public class TripPageAttractionsUp extends AppCompatActivity {
         hospitalTag = findViewById(R.id.hospitalTag);
         busTag = findViewById(R.id.busTag);
         attrTag = findViewById(R.id.attrTag);
+        upcomingTag = findViewById(R.id.upcomingTag);
+        completedTag = findViewById(R.id.completedTag);
+        cancelledTag = findViewById(R.id.cancelledTag);
+
+        //upcoming tag
+        completedTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageAttrUp.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
+        //cancelled tag
+        cancelledTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageBusCanc.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
 
         //Hospital button
         hospitalTag.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +127,7 @@ public class TripPageAttractionsUp extends AppCompatActivity {
 
     private void getDataAttrBooking() {
 
-        RequestQueue queue = Volley.newRequestQueue(TripPageAttractionsUp.this);
+        RequestQueue queue = Volley.newRequestQueue(TripPageAttrCom.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -144,7 +168,7 @@ public class TripPageAttractionsUp extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(TripPageAttractionsUp.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(TripPageAttrCom.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override

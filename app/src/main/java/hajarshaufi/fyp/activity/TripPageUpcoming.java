@@ -90,7 +90,7 @@ public class TripPageUpcoming extends AppCompatActivity {
         attrTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TripPageAttractionsUp.class));
+                startActivity(new Intent(getApplicationContext(), TripPageAttrUp.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
