@@ -36,14 +36,47 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
             android:layout_alignParentStart="true"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:id="@+id/bar"
+            android:layout_below="@+id/staffNo"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bar"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deleteBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/bar"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_baseline_delete_24"
+            android:backgroundTint="@color/darkGreen" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/editBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/bar"
+            android:layout_toStartOf="@+id/deleteBtn"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_baseline_edit_24"
+            android:backgroundTint="@color/darkGreen" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:background="@color/white"
-            android:layout_below="@+id/staffNo"/>
+            android:layout_below="@+id/editBtn"/>
 
     </RelativeLayout>
 
