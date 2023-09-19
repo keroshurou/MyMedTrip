@@ -47,7 +47,9 @@ public class BookBus extends AppCompatActivity {
     Button bookBtn;
     TextView dateEdt;
     private DatePickerDialog datePicker;
-    private String route, time, date, tickets;
+    private String route, time, date, tickets, status;
+
+    String statusDefault = "upcoming";
 
     String url = "http://10.200.66.178/mymedtrip/addBusBooking.php";
 
@@ -189,7 +191,7 @@ public class BookBus extends AppCompatActivity {
                     @Override
                     public void run() {
                         long longTime2 = System.currentTimeMillis();
-                        startActivity(new Intent(getApplicationContext(), TripPageBus.class));
+                        startActivity(new Intent(getApplicationContext(), TripPageBusUp.class));
                     }
                 };
                 Handler handler = new Handler(Looper.getMainLooper());
@@ -205,16 +207,17 @@ public class BookBus extends AppCompatActivity {
         time = selectedTime;
         date = dateEdt.getText().toString();
         tickets = ticketsEdt.getText().toString();
+        status = statusDefault;
 
         //Set error if any fields is empty
         if (TextUtils.isEmpty(tickets)){
             ticketsEdt.setError("Please enter number of tickets");
         }else{
-            addDataToDatabase(route, time, date, tickets);
+            addDataToDatabase(route, time, date, tickets, status);
         }
     }
 
-    private void addDataToDatabase(String route, String time, String date, String tickets) {
+    private void addDataToDatabase(String route, String time, String date, String tickets, String status) {
 
         // url to post our data
         // creating a new variable for our request queue
@@ -274,6 +277,7 @@ public class BookBus extends AppCompatActivity {
                 params.put("time", time);
                 params.put("date", date);
                 params.put("tickets", tickets);
+                params.put("status", status);
 
                 // at last we are returning our params.
                 return params;

@@ -34,6 +34,7 @@ public class TripPageUpcoming extends AppCompatActivity {
     TripUpAdapter tripUpAdapter;
     ListView listView;
     TextView hospitalTag, busTag, attrTag;
+    TextView upcomingTag, completedTag, cancelledTag;
 
     String url = "http://10.200.66.178/mymedtrip/fetchTripUpcoming.php";
 
@@ -51,12 +52,35 @@ public class TripPageUpcoming extends AppCompatActivity {
         hospitalTag = findViewById(R.id.hospitalTag);
         busTag = findViewById(R.id.busTag);
         attrTag = findViewById(R.id.attrTag);
+        upcomingTag = findViewById(R.id.upcomingTag);
+        completedTag = findViewById(R.id.completedTag);
+        cancelledTag = findViewById(R.id.cancelledTag);
 
-        //Hospital button
+        //completed tag
+        completedTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageCompleted.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
+        //cancelled tag
+        cancelledTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageCancelled.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
+        //Bus button
         busTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TripPageBus.class));
+                startActivity(new Intent(getApplicationContext(), TripPageBusUp.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
@@ -66,7 +90,7 @@ public class TripPageUpcoming extends AppCompatActivity {
         attrTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TripPageAttractions.class));
+                startActivity(new Intent(getApplicationContext(), TripPageAttractionsUp.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }

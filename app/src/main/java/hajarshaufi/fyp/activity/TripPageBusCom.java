@@ -26,20 +26,21 @@ import java.util.ArrayList;
 import hajarshaufi.fyp.R;
 import hajarshaufi.fyp.java.BusBooking;
 
-public class TripPageBus extends AppCompatActivity {
+public class TripPageBusCom extends AppCompatActivity {
 
     public static ArrayList<BusBooking> busBookingArrayList = new ArrayList<>();
     BusBooking busBooking;
     BusBookAdapter busBookAdapter;
     ListView listView;
     TextView hospitalTag, busTag, attrTag;
+    TextView upcomingTag, completedTag, cancelledTag;
 
-    String url = "http://10.200.66.178/mymedtrip/fetchBusBooking.php";
+    String url = "http://10.200.66.178/mymedtrip/fetchBusCom.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trip_page_bus);
+        setContentView(R.layout.activity_trip_page_bus_com);
 
         //list view
         listView = findViewById(R.id.busListview);
@@ -50,6 +51,29 @@ public class TripPageBus extends AppCompatActivity {
         hospitalTag = findViewById(R.id.hospitalTag);
         busTag = findViewById(R.id.busTag);
         attrTag = findViewById(R.id.attrTag);
+        upcomingTag = findViewById(R.id.upcomingTag);
+        completedTag = findViewById(R.id.completedTag);
+        cancelledTag = findViewById(R.id.cancelledTag);
+
+        //upcoming tag
+        completedTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageBusUp.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
+        //cancelled tag
+        cancelledTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageBusCanc.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
 
         //Hospital button
         hospitalTag.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +89,7 @@ public class TripPageBus extends AppCompatActivity {
         attrTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TripPageAttractions.class));
+                startActivity(new Intent(getApplicationContext(), TripPageAttractionsUp.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
@@ -103,7 +127,7 @@ public class TripPageBus extends AppCompatActivity {
 
     private void getBusBookingData() {
 
-        RequestQueue queue = Volley.newRequestQueue(TripPageBus.this);
+        RequestQueue queue = Volley.newRequestQueue(TripPageBusCom.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -144,7 +168,7 @@ public class TripPageBus extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(TripPageBus.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(TripPageBusCom.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override

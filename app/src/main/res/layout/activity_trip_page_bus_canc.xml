@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TripPageCancelled">
+    tools:context=".activity.TripPageBusCanc">
 
     <TextView
         android:id="@+id/txtVw"
@@ -30,8 +30,8 @@
         android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:fontFamily="@font/inter"
-        android:textColor="@color/white"
-        android:background="@drawable/trip_tag_selected"/>
+        android:textColor="@color/black"
+        android:background="@drawable/trip_tag"/>
 
     <TextView
         android:id="@+id/busTag"
@@ -45,8 +45,8 @@
         android:layout_marginStart="6dp"
         android:layout_marginEnd="6dp"
         android:fontFamily="@font/inter"
-        android:textColor="@color/black"
-        android:background="@drawable/trip_tag"/>
+        android:textColor="@color/white"
+        android:background="@drawable/trip_tag_selected"/>
 
     <TextView
         android:id="@+id/attrTag"
@@ -103,7 +103,7 @@
         android:background="@drawable/trip_tag_selected"/>
 
     <ListView
-        android:id="@+id/savedListView"
+        android:id="@+id/busListview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"

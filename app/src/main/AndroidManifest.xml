@@ -18,6 +18,20 @@
         android:theme="@style/Theme.MyMedTrip"
         tools:targetApi="31">
         <activity
+            android:name=".activity.TripPageBusCanc"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.TripPageBusCom"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.EditPersonalDetails"
             android:exported="false">
             <meta-data
@@ -46,14 +60,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.TripPageAttractions"
+            android:name=".activity.TripPageAttractionsUp"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.TripPageBus"
+            android:name=".activity.TripPageBusUp"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

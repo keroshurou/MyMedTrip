@@ -25,9 +25,8 @@ import java.util.ArrayList;
 
 import hajarshaufi.fyp.R;
 import hajarshaufi.fyp.java.AttrBooking;
-import hajarshaufi.fyp.java.BusBooking;
 
-public class TripPageAttractions extends AppCompatActivity {
+public class TripPageAttractionsUp extends AppCompatActivity {
 
     public static ArrayList<AttrBooking> attrBookingArrayList = new ArrayList<>();
     AttrBooking attrBooking;
@@ -40,7 +39,7 @@ public class TripPageAttractions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trip_page_attractions);
+        setContentView(R.layout.activity_trip_page_attractions_up);
 
         //list view
         listView = findViewById(R.id.attrListView);
@@ -66,7 +65,7 @@ public class TripPageAttractions extends AppCompatActivity {
         busTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TripPageBus.class));
+                startActivity(new Intent(getApplicationContext(), TripPageBusUp.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
@@ -104,7 +103,7 @@ public class TripPageAttractions extends AppCompatActivity {
 
     private void getDataAttrBooking() {
 
-        RequestQueue queue = Volley.newRequestQueue(TripPageAttractions.this);
+        RequestQueue queue = Volley.newRequestQueue(TripPageAttractionsUp.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -145,7 +144,7 @@ public class TripPageAttractions extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(TripPageAttractions.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(TripPageAttractionsUp.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override

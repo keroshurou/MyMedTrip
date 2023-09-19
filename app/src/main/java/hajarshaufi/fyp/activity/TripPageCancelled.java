@@ -32,7 +32,8 @@ public class TripPageCancelled extends AppCompatActivity {
     Trip trip;
     TripUpAdapter tripUpAdapter;
     ListView listView;
-    TextView upcoming, completed, cancelled;
+    TextView hospitalTag, busTag, attrTag;
+    TextView upcomingTag, completedTag, cancelledTag;
 
     String url = "http://10.200.66.178/mymedtrip/fetchTripCancelled.php";
 
@@ -41,18 +42,21 @@ public class TripPageCancelled extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_page_cancelled);
 
-        //Get All ids
-        upcoming = findViewById(R.id.upcoming);
-        completed = findViewById(R.id.completed);
-        cancelled = findViewById(R.id.cancelled);
-
         //list view
         listView = findViewById(R.id.savedListView);
         tripUpAdapter = new TripUpAdapter(this, tripCancelledList);
         listView.setAdapter(tripUpAdapter);
 
-        //upcoming button
-        upcoming.setOnClickListener(new View.OnClickListener() {
+        //Get All ids
+        hospitalTag = findViewById(R.id.hospitalTag);
+        busTag = findViewById(R.id.busTag);
+        attrTag = findViewById(R.id.attrTag);
+        upcomingTag = findViewById(R.id.upcomingTag);
+        completedTag = findViewById(R.id.completedTag);
+        cancelledTag = findViewById(R.id.cancelledTag);
+
+        //upcoming tag
+        upcomingTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), TripPageUpcoming.class));
@@ -61,11 +65,31 @@ public class TripPageCancelled extends AppCompatActivity {
             }
         });
 
-        //completed button
-        completed.setOnClickListener(new View.OnClickListener() {
+        //cancelled tag
+        cancelledTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TripPageCompleted.class));
+                startActivity(new Intent(getApplicationContext(), TripPageCancelled.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
+        //Bus button
+        busTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageBusUp.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
+        //Attraction button
+        attrTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), TripPageAttractionsUp.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }

@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -186,7 +185,7 @@ public class BookAttraction extends AppCompatActivity{
                     @Override
                     public void run() {
                         long longTime2 = System.currentTimeMillis();
-                        startActivity(new Intent(getApplicationContext(), TripPageAttractions.class));
+                        startActivity(new Intent(getApplicationContext(), TripPageAttractionsUp.class));
                     }
                 };
                 Handler handler = new Handler(Looper.getMainLooper());
